@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  */
 public final class Preprocess {
 
-    private static final Pattern COMPILE = Pattern.compile("[^a-zA-z]");
+    private static final Pattern COMPILE = Pattern.compile("[^a-zA-Z']|('s?'?)");
     private static final Set<String> STOP_LIST = new StopList();
 
     /**
@@ -29,6 +29,7 @@ public final class Preprocess {
         else{
             term = removePunctuationAndLowerCase(term);
             term = removeStopWords(term);
+            term = PorterStemmer.stem(term);
         }
 
         return term;

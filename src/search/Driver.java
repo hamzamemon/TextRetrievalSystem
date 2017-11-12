@@ -6,6 +6,7 @@ import index.Posting;
 import index.PostingList;
 import index.PostingLists;
 import index.TermIndex;
+import process.Preprocess;
 import query.BooleanQuery;
 import query.QueryParser;
 
@@ -55,7 +56,7 @@ public class Driver {
 
         String queryTerms = getInput();
 
-        while(!"E*#T".equals(queryTerms)){
+        while(!"Q".equals(queryTerms)){
             start = System.nanoTime();
 
             BooleanQuery query = QueryParser.parse(queryTerms);
@@ -81,7 +82,7 @@ public class Driver {
     private static String getInput(){
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter a term to search for (E*#T to quit): ");
+        System.out.print("Enter a term to search for (Q to quit): ");
         return scanner.nextLine();
     }
 

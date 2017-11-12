@@ -1,0 +1,130 @@
+The word that was entered was 'queen's'.
+There are a total of 21 documents that contain the word
+Here are the documents that contain 'queen's'.
+
+---------------
+Filename: FT911-4016.txt
+Term frequency: 2
+First locations: 2
+---------------
+
+---------------
+Filename: FT911-4017.txt
+Term frequency: 3
+First locations: 128
+---------------
+
+---------------
+Filename: FT911-4052.txt
+Term frequency: 1
+First locations: 97
+---------------
+
+---------------
+Filename: FT911-4055.txt
+Term frequency: 2
+First locations: 259
+---------------
+
+---------------
+Filename: FT911-4090.txt
+Term frequency: 2
+First locations: 690
+---------------
+
+---------------
+Filename: FT911-4172.txt
+Term frequency: 1
+First locations: 54
+---------------
+
+---------------
+Filename: FT911-4182.txt
+Term frequency: 1
+First locations: 13
+---------------
+
+---------------
+Filename: FT911-4184.txt
+Term frequency: 1
+First locations: 106
+---------------
+
+---------------
+Filename: FT911-4342.txt
+Term frequency: 1
+First locations: 515
+---------------
+
+---------------
+Filename: FT921-1147.txt
+Term frequency: 1
+First locations: 206
+---------------
+
+---------------
+Filename: FT921-1153.txt
+Term frequency: 2
+First locations: 92
+---------------
+
+---------------
+Filename: FT921-1218.txt
+Term frequency: 1
+First locations: 728
+---------------
+
+---------------
+Filename: FT921-3666.txt
+Term frequency: 1
+First locations: 298
+---------------
+
+---------------
+Filename: FT921-495.txt
+Term frequency: 1
+First locations: 640
+---------------
+
+---------------
+Filename: FT921-497.txt
+Term frequency: 1
+First locations: 91
+---------------
+
+---------------
+Filename: FT921-503.txt
+Term frequency: 2
+First locations: 459
+---------------
+
+---------------
+Filename: FT921-507.txt
+Term frequency: 4
+First locations: 308
+---------------
+
+---------------
+Filename: FT921-511.txt
+Term frequency: 1
+First locations: 365
+---------------
+
+---------------
+Filename: FT921-527.txt
+Term frequency: 1
+First locations: 163
+---------------
+
+---------------
+Filename: FT921-631.txt
+Term frequency: 1
+First locations: 380
+---------------
+
+---------------
+Filename: FT921-676.txt
+Term frequency: 2
+First locations: 51
+---------------
+

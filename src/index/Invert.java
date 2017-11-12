@@ -30,11 +30,11 @@ public class Invert {
         DocumentIndex documentIndex = new DocumentIndex();
         TermIndex termIndex = new TermIndex(documentIndex, postingLists);
 
+        writeObjects(termIndex, documentIndex, postingLists);
+
         long end = System.nanoTime();
         long diff = end - start;
         System.out.println("diff = " + diff / 1_000_000_000.0);
-        writeObjects(termIndex, documentIndex, postingLists);
-
     }
 
     /**
