@@ -1,32 +1,32 @@
 package query;
 
 public class BooleanQuery {
-
+    
     private String inputA;
     private String operator;
     private String inputB;
-
-    public BooleanQuery(String operator, String inputB){
+    
+    public BooleanQuery(String operator, String inputB) {
         inputA = null;
         this.operator = operator;
         this.inputB = inputB;
     }
-
-    public BooleanQuery(String inputA, String operator, String inputB){
+    
+    public BooleanQuery(String inputA, String operator, String inputB) {
         this.inputA = inputA;
         this.operator = operator;
         this.inputB = inputB;
     }
-
-    public String getInputA(){
+    
+    public String getInputA() {
         return inputA;
     }
-
-    public String getOperator(){
+    
+    public String getOperator() {
         return operator;
     }
-
-    public String getInputB(){
+    
+    public String getInputB() {
         return inputB;
     }
 }

@@ -11,11 +11,11 @@ import java.io.RandomAccessFile;
  * @author hamza
  */
 public class Invert {
-
+    
     public static final String TERMS = "terms.ser";
     public static final String DOCS = "docs.ser";
     public static final String LIST = "list.ser";
-
+    
     /**
      * The entry point of application.
      *
@@ -23,20 +23,22 @@ public class Invert {
      *
      * @throws IOException an I/O exception has occurred
      */
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         long start = System.nanoTime();
-
+        
         PostingLists postingLists = new PostingLists();
         DocumentIndex documentIndex = new DocumentIndex();
         TermIndex termIndex = new TermIndex(documentIndex, postingLists);
-
+        
         writeObjects(termIndex, documentIndex, postingLists);
-
+        
+        System.out.println("termIndex.size() = " + termIndex.size());
+        
         long end = System.nanoTime();
         long diff = end - start;
         System.out.println("diff = " + diff / 1_000_000_000.0);
     }
-
+    
     /**
      * Writes objects.
      *
@@ -47,13 +49,13 @@ public class Invert {
      * @throws IOException an I/O exception has occurred
      */
     private static void writeObjects(TermIndex termIndex, DocumentIndex documentIndex, PostingLists postingLists)
-            throws IOException{
+            throws IOException {
         writeObject(termIndex, TERMS);
         writeObject(documentIndex, DOCS);
         writeObject(postingLists, LIST);
     }
-
-    private static void writeObject(Object object, String filename) throws IOException{
+    
+    private static void writeObject(Object object, String filename) throws IOException {
         RandomAccessFile randomAccessFile = new RandomAccessFile(filename, "rw");
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(randomAccessFile.getFD()));
         oos.writeObject(object);
