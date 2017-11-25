@@ -13,6 +13,10 @@ public final class QueryParser {
         
         if(array.length == 2) {
             operator = array[0].toUpperCase();
+            if(!"NOT".equals(operator)) {
+                return null;
+            }
+            
             inputB = Preprocess.process(array[1]);
             return new BooleanQuery(operator, inputB);
         }

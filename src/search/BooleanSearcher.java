@@ -15,12 +15,14 @@ public final class BooleanSearcher {
     
     public static PostingList search(BooleanQuery query, TermIndex termIndex, PostingLists postingLists) {
         String inputA = query.getInputA();
-        PostingList listA = getList(inputA, termIndex, postingLists);
+        Term termA = termIndex.get(inputA);
+        PostingList listA = postingLists.getList(termA);
         
         String operator = query.getOperator();
         
         String inputB = query.getInputB();
-        PostingList listB = getList(inputB, termIndex, postingLists);
+        Term termB = termIndex.get(inputB);
+        PostingList listB = postingLists.getList(termB);
         
         locations = new ArrayList<>(Math.abs(listB.size() - listA.size()));
         
@@ -32,13 +34,13 @@ public final class BooleanSearcher {
         PostingList list = new PostingList();
         
         if("AND".equals(operator)) {
-            if(termIndex.containsKey(inputA) && termIndex.containsKey(inputB)) {
+            if(!listA.isEmpty() && !listB.isEmpty()) {
                 list = listA.intersect(backup, locations);
             }
         }
         
         else if("OR".equals(operator)) {
-            if(termIndex.containsKey(inputA) || termIndex.containsKey(inputB)) {
+            if(!listA.isEmpty() || !listB.isEmpty()) {
                 list = listA.union(backup, locations);
             }
         }
@@ -49,22 +51,6 @@ public final class BooleanSearcher {
         
         return list.isEmpty() ? null : list;
     }
-    
-    private static PostingList getList(String input, TermIndex termIndex, PostingLists postingLists) {
-        PostingList postings;
-        
-        try {
-            IDF idfA = termIndex.get(input);
-            int indexA = idfA.getIndex();
-            postings = postingLists.get(indexA);
-        }
-        catch(NullPointerException e) {
-            postings = new PostingList();
-        }
-        
-        return postings;
-    }
-    
     
     public static List<List<Integer>> getLocations() {
         return locations;

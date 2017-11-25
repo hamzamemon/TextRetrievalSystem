@@ -1,9 +1,6 @@
 package index;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.RandomAccessFile;
+import java.io.*;
 
 /**
  * This class creates the indices (HashMaps) and the Posting List and writes them to a file
@@ -30,6 +27,7 @@ public class Invert {
         DocumentIndex documentIndex = new DocumentIndex();
         TermIndex termIndex = new TermIndex(documentIndex, postingLists);
         
+        setDocLengths(termIndex, documentIndex, postingLists);
         writeObjects(termIndex, documentIndex, postingLists);
         
         System.out.println("termIndex.size() = " + termIndex.size());
@@ -37,6 +35,36 @@ public class Invert {
         long end = System.nanoTime();
         long diff = end - start;
         System.out.println("diff = " + diff / 1_000_000_000.0);
+    }
+    
+    /**
+     * Sets the document lengths for all documents
+     *
+     * @param termIndex     the HashMap of the index for the terms
+     * @param documentIndex the HashMap of the index for the documents
+     * @param postingLists  the ArrayList of ArrayList of Postings
+     */
+    private static void setDocLengths(TermIndex termIndex, DocumentIndex documentIndex, PostingLists postingLists) {
+        int N = documentIndex.size();
+        
+        for(Term term : termIndex.values()) {
+            term.setLoggedIdf(N);
+            PostingList list = postingLists.getList(term);
+            
+            for(Posting posting : list) {
+                posting.setLoggedTf();
+                
+                double weight = posting.getLoggedTf() * term.getLoggedIdf();
+                posting.setWeight(weight);
+                
+                Document document = documentIndex.get(posting.getName());
+                document.addLength(weight * weight);
+            }
+        }
+        
+        for(Document document : documentIndex.values()) {
+            document.setLength(Math.sqrt(document.getLength()));
+        }
     }
     
     /**
@@ -55,6 +83,14 @@ public class Invert {
         writeObject(postingLists, LIST);
     }
     
+    /**
+     * Writes one object
+     *
+     * @param object   the object to write
+     * @param filename the file to write the object to
+     *
+     * @throws IOException input error
+     */
     private static void writeObject(Object object, String filename) throws IOException {
         RandomAccessFile randomAccessFile = new RandomAccessFile(filename, "rw");
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(randomAccessFile.getFD()));

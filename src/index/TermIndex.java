@@ -12,8 +12,8 @@ import java.util.TreeMap;
 /**
  * This class represents the HashMap of the index for the terms
  */
-public class TermIndex extends TreeMap<String, IDF> {
-
+public class TermIndex extends TreeMap<String, Term> {
+    
     /**
      * Instantiates a new Term index.
      *
@@ -21,69 +21,63 @@ public class TermIndex extends TreeMap<String, IDF> {
      *
      * @throws FileNotFoundException a class could not found in the folder
      */
-    public TermIndex(DocumentIndex documentIndex, PostingLists postingLists) throws FileNotFoundException{
+    public TermIndex(DocumentIndex documentIndex, PostingLists postingLists) throws FileNotFoundException {
         File dir = new File("res/data/");
         File[] files = dir.listFiles();
         Arrays.sort(files);
-
-        for(File file : files){
+        
+        for(File file : files) {
             Scanner scanner = new Scanner(file).useDelimiter("\\Z");
             String contents = scanner.next();
             scanner.close();
-
+            
             String name = file.getName();
+            name = name.substring(0, name.length() - 4);
             int size = getSize(name, contents, postingLists);
             documentIndex.addDocument(name, size);
         }
     }
-
+    
     /**
-     * This method returns the number of words in the file that pass the 'Preprocessing' class.
-     * It loops through every word in 'contents' and 'Preprocess'es each of them
+     * This method returns the number of words in the file that pass the 'Preprocessing' class. It loops through every
+     * word in 'contents' and 'Preprocess'es each of them
      *
      * @param name     the filename
      * @param contents the contents of the file
      *
      * @return the number of words in the file after processing 'contents'
      */
-    private int getSize(String name, String contents, PostingLists postingLists){
+    private int getSize(String name, String contents, PostingLists postingLists) {
         int location = 0;
         int size = 0;
-
+        
         StringTokenizer tokenizer = new StringTokenizer(contents);
-        while(tokenizer.hasMoreTokens()){
+        while(tokenizer.hasMoreTokens()) {
             location++;
-
+            
             String word = tokenizer.nextToken();
             String processedWord = Preprocess.process(word);
-
-            if(!processedWord.isEmpty()){
-                IDF df = containsKey(processedWord) ? get(processedWord) : new IDF();
-                int index = df.getIndex();
-
+            
+            if(!processedWord.isEmpty()) {
                 size++;
-                PostingList postingList = null;
-
-                try{
-                    postingList = postingLists.get(index);
-                }
-                catch(IndexOutOfBoundsException e){
-                }
-
-                if(postingList == null){
+                
+                Term term = containsKey(processedWord) ? get(processedWord) : new Term(word);
+                PostingList postingList = postingLists.getList(term);
+                
+                if(postingList.isEmpty()) {
                     postingList = new PostingList();
                     postingList.add(new Posting(name, location));
-
+                    
                     postingLists.add(postingList);
-                    put(processedWord, df);
+                    put(processedWord, term);
                 }
-
-                else{
-                    postingList.updatePostings(name, location, df);
+                
+                else {
+                    postingList.updatePostings(name, location, term);
                 }
             }
         }
-
+        
         return size;
     }
 }

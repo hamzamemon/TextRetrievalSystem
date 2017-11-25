@@ -16,7 +16,7 @@ public class PostingList extends ArrayList<Posting> {
      * @param name     the filename
      * @param location the first location of the term in the file
      */
-    public void updatePostings(String name, int location, IDF df) {
+    public void updatePostings(String name, int location, Term term) {
         Posting posting = get(size() - 1);
         if(posting.getName().equals(name)) {
             posting.incrementFrequency();
@@ -24,7 +24,7 @@ public class PostingList extends ArrayList<Posting> {
         
         else {
             add(new Posting(name, location));
-            df.incrementDocFrequency();
+            term.incrementDocFrequency();
         }
     }
     
