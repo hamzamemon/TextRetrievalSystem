@@ -36,6 +36,9 @@ public class Driver {
         ObjectInputStream ois3 = new ObjectInputStream(new FileInputStream(Invert.LIST));
         PostingLists postingLists = (PostingLists) ois3.readObject();
         
+/*        ObjectInputStream ois4 = new ObjectInputStream(new FileInputStream(Invert.LOCATIONS));
+        LocationsMap locationsMap = (LocationsMap) ois4.readObject();*/
+        
         long end = System.nanoTime();
         long dif = end - start;
         System.out.println("dif = " + dif / 1_000_000_000.0);
@@ -43,6 +46,7 @@ public class Driver {
         ois.close();
         ois2.close();
         ois3.close();
+        //ois4.close();
         
         String queryTerms = getInput();
         
@@ -57,7 +61,7 @@ public class Driver {
             System.out.println("dif = " + dif / 1_000_000_000.0);
             
             if(postings == null) {
-                System.out.println('\'' + queryTerms + "' isn't in any of the files.\n");
+                System.out.println('\'' + queryTerms + "' isn't in any of the files or you have an error in your query.\n");
             }
             
             else {
@@ -84,13 +88,20 @@ public class Driver {
      */
     private static void writeInfo(BooleanQuery query, String queryTerms, PostingList postings)
             throws FileNotFoundException {
-        queryTerms = queryTerms.replace(" ", "_");
+        String queryTermsChanged = queryTerms.replace(" ", "_");
         boolean empty = query.getInputB().isEmpty();
         
-        PrintWriter pw = new PrintWriter(queryTerms + ".txt");
+        PrintWriter pw = new PrintWriter(queryTermsChanged + ".txt");
         pw.println("The word that was entered was '" + queryTerms + "'.");
-        pw.println("There are a total of " + postings.size() + " documents that contain the word");
+        if("NEAR".equals(query.getOperator())) {
+            pw.println("There are a total of " + postings.size() + " occurrences of these two words without "
+                    + query.getK() + " words");
+        }
+        else {
+            pw.println("There are a total of " + postings.size() + " documents that contain the word");
+        }
         pw.println("Here are the documents that contain '" + queryTerms + "'.\n");
+        queryTerms = queryTermsChanged;
         
         List<List<Integer>> locations = BooleanSearcher.getLocations();
         
@@ -113,7 +124,12 @@ public class Driver {
             }
             sb.append(locs.get(locs.size() - 1));
             
-            pw.println("First locations: " + sb);
+            if("NEAR".equals(query.getOperator())) {
+                pw.println("Locations: " + sb);
+            }
+            else {
+                pw.println("First locations: " + sb);
+            }
             pw.println("---------------\n");
         }
         

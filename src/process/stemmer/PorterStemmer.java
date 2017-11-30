@@ -10,9 +10,6 @@ public class PorterStemmer {
     
     private static HashMap<String, String> stems = new HashMap<>();
     
-    /*
-   termIndex.size() = 77020
-     */
     public static String stem(String termS) {
         if(termS.length() <= 2) {
             return termS;

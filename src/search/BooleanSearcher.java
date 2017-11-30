@@ -14,6 +14,9 @@ public final class BooleanSearcher {
     private static List<List<Integer>> locations;
     
     public static PostingList search(BooleanQuery query, TermIndex termIndex, PostingLists postingLists) {
+        if(query == null) {
+            return null;
+        }
         String inputA = query.getInputA();
         Term termA = termIndex.get(inputA);
         PostingList listA = postingLists.getList(termA);
@@ -33,7 +36,7 @@ public final class BooleanSearcher {
         
         PostingList list = new PostingList();
         
-        if("AND".equals(operator)) {
+        if("AND".equals(operator) || "NEAR".equals(operator)) {
             if(!listA.isEmpty() && !listB.isEmpty()) {
                 list = listA.intersect(backup, locations);
             }
@@ -47,6 +50,10 @@ public final class BooleanSearcher {
         
         else if("NOT".equals(operator)) {
             list = termIndex.containsKey(inputB) ? listB.subtract(ALL_FILES, locations) : ALL_FILES;
+        }
+        if("NEAR".equals(operator)) {
+            locations.clear();
+            list = list.near(backup, locations, query.getK());
         }
         
         return list.isEmpty() ? null : list;

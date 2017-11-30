@@ -1,6 +1,7 @@
 package index;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
@@ -15,9 +16,10 @@ public class Posting implements Serializable {
     
     private String name;
     private int frequency;
-    private int firstLocation;
+    //private int firstLocation;
     private double loggedTf;
     private double weight;
+    private ArrayList<Integer> locations;
     
     /**
      * Instantiates a new Posting.
@@ -27,8 +29,11 @@ public class Posting implements Serializable {
      */
     public Posting(String name, int firstLocation) {
         this.name = name;
-        this.firstLocation = firstLocation;
+        //this.firstLocation = firstLocation;
         frequency = 1;
+        
+        locations = new ArrayList<>();
+        locations.add(firstLocation);
     }
     
     /**
@@ -62,14 +67,19 @@ public class Posting implements Serializable {
      * @return the first location
      */
     public int getFirstLocation() {
-        return firstLocation;
+        return locations.get(0);
     }
     
     /**
      * Increments frequency is the particular word is found another time in the file
      */
-    public void incrementFrequency() {
+    public void addLocation(int location) {
+        locations.add(location);
         frequency++;
+    }
+    
+    public ArrayList<Integer> getLocations() {
+        return locations;
     }
     
     /**

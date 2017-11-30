@@ -1,6 +1,9 @@
 package index;
 
-import java.io.*;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.RandomAccessFile;
 
 /**
  * This class creates the indices (HashMaps) and the Posting List and writes them to a file
@@ -12,6 +15,7 @@ public class Invert {
     public static final String TERMS = "terms.ser";
     public static final String DOCS = "docs.ser";
     public static final String LIST = "list.ser";
+    public static final String LOCATIONS = "locations.ser";
     
     /**
      * The entry point of application.
@@ -76,7 +80,8 @@ public class Invert {
      *
      * @throws IOException an I/O exception has occurred
      */
-    private static void writeObjects(TermIndex termIndex, DocumentIndex documentIndex, PostingLists postingLists)
+    private static void writeObjects(TermIndex termIndex, DocumentIndex documentIndex,
+                                     PostingLists postingLists)
             throws IOException {
         writeObject(termIndex, TERMS);
         writeObject(documentIndex, DOCS);
