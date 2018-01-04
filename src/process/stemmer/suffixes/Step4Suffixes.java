@@ -11,8 +11,6 @@ public enum Step4Suffixes {
     ABLE(""),
     IBLE(""),
     MENT(""),
-    SION("s"),
-    TION("t"),
     
     // 3 letters
     ANT(""),
@@ -23,11 +21,13 @@ public enum Step4Suffixes {
     OUS(""),
     IVE(""),
     IZE(""),
+    ION(""),
     
     // 2 letters
     AL(""),
     ER(""),
-    IC("");
+    IC(""),
+    OU("");
     
     final String suffix;
     

@@ -18,18 +18,21 @@ public class TermIndex extends TreeMap<String, Term> {
      * Instantiates a new Term index.
      *
      * @param documentIndex the HashMap of the index for the Documents
-     *
-     * @throws FileNotFoundException a class could not found in the folder
      */
-    public TermIndex(DocumentIndex documentIndex, PostingLists postingLists) throws FileNotFoundException {
+    public TermIndex(DocumentIndex documentIndex, PostingLists postingLists) {
         File dir = new File("res/data/");
         File[] files = dir.listFiles();
         Arrays.sort(files);
         
         for(File file : files) {
-            Scanner scanner = new Scanner(file).useDelimiter("\\Z");
-            String contents = scanner.next();
-            scanner.close();
+            String contents = null;
+            try(Scanner scanner = new Scanner(file).useDelimiter("\\Z")) {
+                contents = scanner.next();
+                scanner.close();
+            }
+            catch(FileNotFoundException e) {
+                e.printStackTrace();
+            }
             
             String name = file.getName();
             name = name.substring(0, name.length() - 4);

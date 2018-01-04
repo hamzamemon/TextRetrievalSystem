@@ -1,6 +1,5 @@
 package process;
 
-
 import process.stemmer.PorterStemmer;
 
 import java.util.Set;

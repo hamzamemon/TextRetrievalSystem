@@ -1,14 +1,8 @@
 package process.stemmer;
 
-public class WordMethods {
+public final class WordMethods {
     
-    private StringBuilder term;
-    
-    public WordMethods(String termS) {
-        term = new StringBuilder(termS);
-        if(termS.contains("y")) {
-            term = setCapitalYs(term);
-        }
+    private WordMethods() {
     }
     
     public static char getLetterType(char letter) {
@@ -29,11 +23,17 @@ public class WordMethods {
         return getLetterType(letter) == 'V';
     }
     
-    public StringBuilder getTerm() {
-        return term;
+    public static boolean endsWithDouble(StringBuilder term) {
+        if(term.length() >= 2 && !isVowel(term.charAt(term.length() - 1))) {
+            char last = term.charAt(term.length() - 1);
+            char secondLast = term.charAt(term.length() - 2);
+            return last == secondLast;
+        }
+        
+        return false;
     }
     
-    private StringBuilder setCapitalYs(StringBuilder term) {
+    public static void setCapitalYs(StringBuilder term) {
         if(term.charAt(0) == 'y') {
             term = term.replace(0, 1, "Y");
         }
@@ -44,16 +44,5 @@ public class WordMethods {
                 }
             }
         }
-        return term;
-    }
-    
-    public boolean endsWithDouble() {
-        if(term.length() >= 2 && !isVowel(term.charAt(term.length() - 1))) {
-            char last = term.charAt(term.length() - 1);
-            char secondLast = term.charAt(term.length() - 2);
-            return last == secondLast;
-        }
-        
-        return false;
     }
 }

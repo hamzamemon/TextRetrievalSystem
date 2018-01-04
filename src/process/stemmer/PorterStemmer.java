@@ -21,11 +21,11 @@ public class PorterStemmer {
             stem = stems.get(termS);
         }
         else {
-            Word word = new Word(termS);
-            word = doStep1(word);
-            word = doStep2To5(word);
+            StringBuilder term = new StringBuilder(termS);
+            doStep1(term);
+            doStep2To4(term);
+            doStep5(term);
             
-            StringBuilder term = word.getTerm();
             stem = term.toString().replace("Y", "y");
             stems.put(termS, stem);
         }
@@ -33,159 +33,193 @@ public class PorterStemmer {
         return stem;
     }
     
-    private static Word doStep2To5(Word word) {
-        // Step 2
-        Step2Suffixes[] step2Suffixes = Step2Suffixes.values();
-        
-        StringBuilder term = word.getTerm();
-        String region1 = word.getRegion1();
-        for(Step2Suffixes step2Suffix : step2Suffixes) {
-            String suffix = step2Suffix.toString();
-            if(region1.endsWith(suffix)) {
-                term = term.replace(term.lastIndexOf(suffix), term.length(), step2Suffix.getSuffix());
-                break;
-            }
-        }
-        word.setTerm(term);
-        
-        // Step 3
-        String region2 = word.getRegion2();
-        if(region2.endsWith("ative")) {
-            term = term.delete(term.length() - 5, term.length());
-        }
-        word.setTerm(term);
-        
-        Step3Suffixes[] step3Suffixes = Step3Suffixes.values();
-        
-        region1 = word.getRegion1();
-        for(Step3Suffixes step3Suffix : step3Suffixes) {
-            String suffix = step3Suffix.toString();
-            if(region1.endsWith(suffix)) {
-                term = term.replace(term.lastIndexOf(suffix), term.length(), step3Suffix.getSuffix());
-                break;
-            }
+    private static void doStep1(StringBuilder term) {
+        String termS = term.toString();
+        if(termS.contains("y")) {
+            WordMethods.setCapitalYs(term);
         }
         
-        word.setTerm(term);
-        
-        // Step 4
-        Step4Suffixes[] step4Suffixes = Step4Suffixes.values();
-        
-        region2 = word.getRegion2();
-        for(Step4Suffixes step4Suffix : step4Suffixes) {
-            String suffix = step4Suffix.toString();
-            if(region2.endsWith(suffix)) {
-                term = term.replace(term.lastIndexOf(suffix), term.length(), step4Suffix.getSuffix());
-                break;
-            }
+        if(termS.endsWith("sses")) {
+            // *sses -> *ss
+            term = term.delete(term.length() - 2, term.length());
         }
-        
-        word.setTerm(term);
-        
-        // Step 5
-        region1 = word.getRegion1();
-        region2 = word.getRegion2();
-        
-        if(region2.endsWith("e") || (region1.endsWith("e") && !region1.endsWith(word.getShortSyllable() + 'e')) || region2.endsWith("ll")) {
+        else if(termS.endsWith("ies")) {
+            // *ies -> *i
+            term = term.delete(term.length() - 2, term.length());
+        }
+        else if(termS.endsWith("ss")) {
+            // *ss -> *ss
+        }
+        else if(!termS.isEmpty() && termS.charAt(termS.length() - 1) == 's') {
+            // *s -> *
             term = term.deleteCharAt(term.length() - 1);
         }
         
-        word.setTerm(term);
-        return word;
-    }
-    
-    private static Word doStep1(Word word) {
-        StringBuilder term = word.getTerm();
-        String termS = term.toString();
-        
-        if(term.length() == 0) {
-            return word;
-        }
-        if(termS.endsWith("sses")) {
-            // sses -> ss
-            term = term.delete(term.length() - 2, term.length());
-        }
-        else if(termS.endsWith("ied") || termS.endsWith("ies")) {
-            if(term.length() >= 5) {
-                // ied or ies -> i
-                term = term.delete(term.length() - 2, term.length());
-            }
-            else {
-                // ied or ies -> ie
-                term = term.deleteCharAt(term.length() - 1);
-            }
-        }
-        else if(term.charAt(term.length() - 1) == 's' && !(termS.endsWith("us") || termS.endsWith("ss"))) {
-            if(hasVowelBeforeLastKLetter(term, 2)) {
-                term = term.deleteCharAt(term.length() - 1);
-            }
-        }
-        
-        word.setTerm(term);
         termS = term.toString();
         
-        String region1 = word.getRegion1();
-        if(region1.endsWith("eed") || region1.endsWith("eedly")) {
-            term = term.delete(term.lastIndexOf("ee") + 2, term.length());
-        }
-        else if(termS.endsWith("ed") || termS.endsWith("edly")) {
-            int lastIndex = term.lastIndexOf("ed");
-            if(hasVowelBeforeLastKLetter(term, term.length() - lastIndex)) {
-                term = step1BPart2(word, lastIndex);
+        if(termS.endsWith("eed")) {
+            String prefix = termS.substring(0, termS.length() - 3);
+            if(getMeasure(prefix) > 0) {
+                term = term.deleteCharAt(term.length() - 1);
             }
         }
-        else if(termS.endsWith("ing") || termS.endsWith("ingly")) {
-            int lastIndex = term.lastIndexOf("ing");
-            if(hasVowelBeforeLastKLetter(term, term.length() - lastIndex)) {
-                term = step1BPart2(word, lastIndex);
+        else if(termS.endsWith("ed")) {
+            String prefix = termS.substring(0, termS.length() - 2);
+            if(getLetterTypes(prefix).contains("V")) {
+                term = step1BPart2(term, 2);
             }
         }
-        
-        word.setTerm(term);
+        else if(termS.endsWith("ing")) {
+            String prefix = termS.substring(0, termS.length() - 3);
+            if(getLetterTypes(prefix).contains("V")) {
+                term = step1BPart2(term, 3);
+            }
+        }
         
         if(term.charAt(term.length() - 1) == 'y' || term.charAt(term.length() - 1) == 'Y') {
-            if(term.length() > 2 && "aeiouy".indexOf(term.charAt(term.length() - 2)) == -1) {
+            String withoutY = term.substring(0, term.length() - 1);
+            if(getLetterTypes(withoutY).contains("V")) {
                 term = term.replace(term.length() - 1, term.length(), "i");
             }
         }
-        
-        word.setTerm(term);
-        return word;
     }
     
-    private static StringBuilder step1BPart2(Word word, int lastIndex) {
-        StringBuilder term = word.getTerm();
-        
-        term = term.delete(lastIndex, term.length());
+    private static StringBuilder step1BPart2(StringBuilder term, int numCharsToDelete) {
+        term = term.delete(term.length() - numCharsToDelete, term.length());
         String termS = term.toString();
         
-        word.setTerm(term);
-        
-        if(term.length() == 0) {
-            return term;
-        }
         if(termS.endsWith("at") || termS.endsWith("bl") || termS.endsWith("iz")) {
             term = term.append('e');
         }
-        else if(word.endsWithDouble()) {
-            term = term.deleteCharAt(term.length() - 1);
+        else if(WordMethods.endsWithDouble(term)) {
+            if(termS.charAt(termS.length() - 1) != 'l' && termS.charAt(termS.length() - 1) != 's' && termS.charAt(termS.length() - 1) != 'z') {
+                term = term.deleteCharAt(term.length() - 1);
+            }
         }
-        else if(word.isShort()) {
+        else if(getMeasure(termS) == 1 && isCVC(termS)) {
             term = term.append('e');
         }
         
         return term;
     }
     
-    private static boolean hasVowelBeforeLastKLetter(StringBuilder term, int k) {
-        boolean containsVowel = false;
-        for(int i = 0; i < term.length() - k; i++) {
-            if("aeiouy".indexOf(term.charAt(i)) >= 0) {
-                containsVowel = true;
+    private static void doStep2To4(StringBuilder term) {
+        // Step 2
+        Step2Suffixes[] step2Suffixes = Step2Suffixes.values();
+        
+        String termS = term.toString();
+        for(Step2Suffixes step2Suffix : step2Suffixes) {
+            String suffix = step2Suffix.toString();
+            if(termS.endsWith(suffix)) {
+                removeSuffix(term, suffix, step2Suffix.getSuffix());
                 break;
             }
         }
         
-        return containsVowel;
+        // Step 3
+        Step3Suffixes[] step3Suffixes = Step3Suffixes.values();
+        
+        termS = term.toString();
+        for(Step3Suffixes step3Suffix : step3Suffixes) {
+            String suffix = step3Suffix.toString();
+            if(termS.endsWith(suffix)) {
+                removeSuffix(term, suffix, step3Suffix.getSuffix());
+                break;
+            }
+        }
+        
+        // Step 4
+        Step4Suffixes[] step4Suffixes = Step4Suffixes.values();
+        termS = term.toString();
+        
+        for(Step4Suffixes step4Suffix : step4Suffixes) {
+            String suffix = step4Suffix.toString();
+            if(termS.endsWith(suffix)) {
+                String prefix = termS.substring(0, termS.length() - suffix.length());
+                int lastIndex = prefix.length();
+                if(getMeasure(prefix) > 1) {
+                    if("ion".equals(suffix)) {
+                        if(prefix.charAt(prefix.length() - 1) == 's' || prefix.charAt(prefix.length() - 1) == 't') {
+                            term = term.replace(lastIndex, term.length(), step4Suffix.getSuffix());
+                            break;
+                        }
+                    }
+                    else {
+                        term = term.replace(lastIndex, term.length(), step4Suffix.getSuffix());
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+    }
+    
+    private static void doStep5(StringBuilder term) {
+        String termS = term.toString();
+        
+        if(!termS.isEmpty() && termS.charAt(termS.length() - 1) == 'e') {
+            String withoutE = termS.substring(0, termS.length() - 1);
+            int m = getMeasure(withoutE);
+            if(m > 1) {
+                term = term.deleteCharAt(term.length() - 1);
+            }
+            else if(m == 1) {
+                if(!isCVC(withoutE)) {
+                    term = term.deleteCharAt(term.length() - 1);
+                }
+            }
+        }
+        
+        termS = term.toString();
+        
+        if(getMeasure(termS) > 1 && termS.endsWith("ll")) {
+            term = term.deleteCharAt(term.length() - 1);
+        }
+    }
+    
+    private static boolean isCVC(String termS) {
+        if(termS.length() < 3) {
+            return false;
+        }
+        char last = termS.charAt(termS.length() - 1);
+        if(last == 'w' || last == 'x' || last == 'Y') {
+            return false;
+        }
+        char secondLast = termS.charAt(termS.length() - 2);
+        char thirdLast = termS.charAt(termS.length() - 3);
+        
+        return !WordMethods.isVowel(thirdLast) && WordMethods.isVowel(secondLast) && !WordMethods.isVowel(last);
+    }
+    
+    private static void removeSuffix(StringBuilder term, String suffix, String replacement) {
+        String prefix = term.substring(0, term.length() - suffix.length());
+        int lastIndex = prefix.length();
+        if(getMeasure(prefix) > 0) {
+            term = term.replace(lastIndex, term.length(), replacement);
+        }
+    }
+    
+    private static String getLetterTypes(String word) {
+        StringBuilder letterTypes = new StringBuilder(word.length());
+        for(int i = 0; i < word.length(); i++) {
+            char letter = word.charAt(i);
+            char letterType = WordMethods.getLetterType(letter);
+            if(letterTypes.length() == 0 || letterTypes.charAt(letterTypes.length() - 1) != letterType) {
+                letterTypes.append(letterType);
+            }
+        }
+        
+        return letterTypes.toString();
+    }
+    
+    private static int getMeasure(String word) {
+        String letterTypes = getLetterTypes(word);
+        if(letterTypes.length() < 2) {
+            return 0;
+        }
+        if(letterTypes.charAt(0) == 'C') {
+            return (letterTypes.length() - 1) / 2;
+        }
+        return letterTypes.length() / 2;
     }
 }

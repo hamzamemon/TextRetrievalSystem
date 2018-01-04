@@ -16,7 +16,6 @@ public class Posting implements Serializable {
     
     private String name;
     private int frequency;
-    //private int firstLocation;
     private double loggedTf;
     private double weight;
     private ArrayList<Integer> locations;
@@ -29,10 +28,9 @@ public class Posting implements Serializable {
      */
     public Posting(String name, int firstLocation) {
         this.name = name;
-        //this.firstLocation = firstLocation;
         frequency = 1;
         
-        locations = new ArrayList<>();
+        locations = new ArrayList<>(1);
         locations.add(firstLocation);
     }
     
