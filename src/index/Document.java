@@ -5,8 +5,6 @@ import java.io.Serializable;
 /**
  * This class creates a Document that acts as the text file. It contains the name of the file, the length and the number
  * of words in the file after processing it.
- *
- * @author hamza
  */
 public class Document implements Serializable {
     

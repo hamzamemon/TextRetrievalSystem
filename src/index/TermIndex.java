@@ -1,6 +1,7 @@
 package index;
 
 import process.Preprocess;
+import process.stemmer.PorterStemmer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,17 +19,18 @@ public class TermIndex extends TreeMap<String, Term> {
      * Instantiates a new Term index.
      *
      * @param documentIndex the HashMap of the index for the Documents
+     * @param postingLists  the PostingLists
      */
     public TermIndex(DocumentIndex documentIndex, PostingLists postingLists) {
         File dir = new File("res/data/");
         File[] files = dir.listFiles();
         Arrays.sort(files);
+        PorterStemmer.createMap();
         
         for(File file : files) {
             String contents = null;
             try(Scanner scanner = new Scanner(file).useDelimiter("\\Z")) {
                 contents = scanner.next();
-                scanner.close();
             }
             catch(FileNotFoundException e) {
                 e.printStackTrace();
@@ -45,8 +47,9 @@ public class TermIndex extends TreeMap<String, Term> {
      * This method returns the number of words in the file that pass the 'Preprocessing' class. It loops through every
      * word in 'contents' and 'Preprocess'es each of them
      *
-     * @param name     the filename
-     * @param contents the contents of the file
+     * @param name         the filename
+     * @param contents     the contents of the file
+     * @param postingLists the PostingLists
      *
      * @return the number of words in the file after processing 'contents'
      */
@@ -67,16 +70,18 @@ public class TermIndex extends TreeMap<String, Term> {
                 Term term = containsKey(processedWord) ? get(processedWord) : new Term(word);
                 PostingList postingList = postingLists.getList(term);
                 
+                // if first word in the file
                 if(postingList.isEmpty()) {
-                    postingList = new PostingList();
                     postingList.add(new Posting(name, location));
                     
                     postingLists.add(postingList);
                     put(processedWord, term);
                 }
                 
+                // another occurrence of the word in the file
                 else {
-                    postingList.updatePostings(name, location, term);
+                    postingList.updatePostings(name, location);
+                    term.incrementDocFrequency();
                 }
             }
         }

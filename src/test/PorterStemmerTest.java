@@ -12,19 +12,20 @@ import static org.junit.Assert.assertEquals;
 public class PorterStemmerTest {
     
     @Test
-    public void testPorterAlgorithm() {
+    public void testPorter2Algorithm() {
         int count = 0;
         
-        try(Scanner testInput = new Scanner(new File("testInput.txt"))) {
-            Scanner testOutput = new Scanner(new File("testOutput.txt"));
+        try(Scanner porter2Input = new Scanner(new File("porter2Input.txt"))) {
+            PorterStemmer.createMap();
             
-            while(testInput.hasNext()) {
-                String input = testInput.next();
-                String output = testOutput.next();
+            while(porter2Input.hasNext()) {
+                String input = porter2Input.next();
+                String output = porter2Input.next();
                 
                 String stemmed = PorterStemmer.stem(input);
                 if(!stemmed.equals(output)) {
                     count++;
+                    System.out.println(input + "=>" + stemmed + " but should be " + output);
                 }
             }
         }
@@ -34,4 +35,5 @@ public class PorterStemmerTest {
         
         assertEquals(count, 0);
     }
+    
 }

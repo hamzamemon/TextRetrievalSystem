@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class is just an ArrayList of Postings
- *
- * @author hamza
+ * This class is just an ArrayList of Postings that either performs AND, OR or NOT queries
  */
 public class PostingList extends ArrayList<Posting> {
     
@@ -16,18 +14,25 @@ public class PostingList extends ArrayList<Posting> {
      * @param name     the filename
      * @param location the first location of the term in the file
      */
-    public void updatePostings(String name, int location, Term term) {
+    public void updatePostings(String name, int location) {
         Posting posting = get(size() - 1);
         if(posting.getName().equals(name)) {
-            posting.addLocation(location);
+            posting.incrementFrequency();
         }
         
         else {
             add(new Posting(name, location));
-            term.incrementDocFrequency();
         }
     }
     
+    /**
+     * Performs an AND query by looping through backup
+     *
+     * @param backup    the collection of both PostingLists
+     * @param locations the locations
+     *
+     * @return the posting list
+     */
     public PostingList intersect(PostingList backup, List<List<Integer>> locations) {
         PostingList postings = new PostingList();
         for(int i = 1; i < backup.size(); i++) {
@@ -47,34 +52,14 @@ public class PostingList extends ArrayList<Posting> {
         return postings;
     }
     
-    public PostingList near(PostingList backup, List<List<Integer>> locations, int k) {
-        PostingList postings = new PostingList();
-        for(int i = 1; i < backup.size(); i++) {
-            Posting prev = backup.get(i - 1);
-            Posting next = backup.get(i);
-            
-            if(prev.getName().equals(next.getName())) {
-                int x = 0;
-                Posting smallest = prev.getLocations().size() < next.getLocations().size() ? prev : next;
-                Posting largest = prev.getLocations().size() >= next.getLocations().size() ? prev : next;
-                for(Integer small : smallest.getLocations()) {
-                    for(Integer large : largest.getLocations()) {
-                        if(Math.abs(small - large) <= k){
-                            List<Integer> ints = new ArrayList<>(2);
-                            ints.add(small);
-                            ints.add(large);
-                            locations.add(ints);
-    
-                            postings.add(next);
-                        }
-                    }
-                }
-            }
-        }
-        
-        return postings;
-    }
-    
+    /**
+     * Performs an OR query by looping through backup
+     *
+     * @param backup    the collection of both PostingLists
+     * @param locations the locations
+     *
+     * @return the posting list
+     */
     public PostingList union(PostingList backup, List<List<Integer>> locations) {
         Posting prev = backup.get(0);
         
@@ -102,6 +87,14 @@ public class PostingList extends ArrayList<Posting> {
         return postings;
     }
     
+    /**
+     * Performs a NOT query by looping through backup and returning files not found
+     *
+     * @param backup    the collection of both PostingLists (word's Postings and all)
+     * @param locations the locations
+     *
+     * @return the posting list
+     */
     public PostingList subtract(PostingList backup, List<List<Integer>> locations) {
         for(int i = backup.size() - 1, j = size() - 1; i >= 0 && j >= 0; i--) {
             String name1 = backup.get(i).getName();

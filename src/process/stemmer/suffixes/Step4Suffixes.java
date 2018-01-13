@@ -26,8 +26,7 @@ public enum Step4Suffixes {
     // 2 letters
     AL(""),
     ER(""),
-    IC(""),
-    OU("");
+    IC("");
     
     final String suffix;
     

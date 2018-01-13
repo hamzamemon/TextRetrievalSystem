@@ -12,11 +12,11 @@ import java.util.regex.Pattern;
  */
 public final class Preprocess {
     
-    private static final Pattern COMPILE = Pattern.compile("[^a-zA-Z']|('s?'?)");
+    private static final Pattern COMPILE = Pattern.compile("[^a-zA-Z']");
     private static final Set<String> STOP_LIST = new StopList();
     
     /**
-     * Process string. by calling each method in the right order
+     * Process string by calling each method in the right order
      *
      * @param term the term
      *
@@ -24,20 +24,17 @@ public final class Preprocess {
      */
     public static String process(String term) {
         if(STOP_LIST.contains(term)) {
-            term = "";
+            return "";
         }
         
-        else {
-            term = removePunctuationAndLowerCase(term);
-            term = removeStopWords(term);
-            term = PorterStemmer.stem(term);
-        }
-        
-        return term;
+        term = removePunctuationAndLowerCase(term);
+        term = removeStopWords(term);
+        term = PorterStemmer.stem(term);
+        return removeStopWords(term);
     }
     
     /**
-     * This method returns a String with anything that is not lower case letters
+     * This method removes special characters and lower cases
      *
      * @param term the term
      *

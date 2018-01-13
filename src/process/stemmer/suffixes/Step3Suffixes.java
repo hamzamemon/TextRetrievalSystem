@@ -2,8 +2,13 @@ package process.stemmer.suffixes;
 
 public enum Step3Suffixes {
     
+    // 7 letters
+    ATIONAL("ate"),
+    
+    // 6 letters
+    TIONAL("tion"),
+    
     // 5 letters
-    ATIVE(""),
     ALIZE("al"),
     ICATE("ic"),
     ICITI("ic"),

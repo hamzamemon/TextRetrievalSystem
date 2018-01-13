@@ -1,14 +1,12 @@
 package index;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
- * This class creates a Posting, which is when a term appears in the file. It contains the filename, the frequency of
- * said term in the file, the logged term frequency, the weight and the first location of the term in the file.
- *
- * @author hamza
+ * This class creates a Posting, which is when a term appears in the file.
+ * It contains the filename, the frequency of said term in the file, the weight and the first location of the
+ * term in the file.
  */
 public class Posting implements Serializable {
     
@@ -16,9 +14,8 @@ public class Posting implements Serializable {
     
     private String name;
     private int frequency;
-    private double loggedTf;
+    private int firstLocation;
     private double weight;
-    private ArrayList<Integer> locations;
     
     /**
      * Instantiates a new Posting.
@@ -28,10 +25,8 @@ public class Posting implements Serializable {
      */
     public Posting(String name, int firstLocation) {
         this.name = name;
+        this.firstLocation = firstLocation;
         frequency = 1;
-        
-        locations = new ArrayList<>(1);
-        locations.add(firstLocation);
     }
     
     /**
@@ -40,14 +35,7 @@ public class Posting implements Serializable {
      * @return logged term frequency
      */
     public double getLoggedTf() {
-        return loggedTf;
-    }
-    
-    /**
-     * Sets the logged term frequency
-     */
-    public void setLoggedTf() {
-        loggedTf = Math.log10(frequency) + 1;
+        return Math.log10(frequency) + 1;
     }
     
     /**
@@ -65,19 +53,15 @@ public class Posting implements Serializable {
      * @return the first location
      */
     public int getFirstLocation() {
-        return locations.get(0);
+        return firstLocation;
     }
     
     /**
-     * Increments frequency is the particular word is found another time in the file
+     * Increments frequency is the particular word is found
+     * another time in the file
      */
-    public void addLocation(int location) {
-        locations.add(location);
+    public void incrementFrequency() {
         frequency++;
-    }
-    
-    public ArrayList<Integer> getLocations() {
-        return locations;
     }
     
     /**
