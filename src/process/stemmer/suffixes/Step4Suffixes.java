@@ -21,7 +21,6 @@ public enum Step4Suffixes {
     OUS(""),
     IVE(""),
     IZE(""),
-    ION(""),
     
     // 2 letters
     AL(""),

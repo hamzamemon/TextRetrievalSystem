@@ -8,7 +8,7 @@ import java.io.Serializable;
  */
 public class Term implements Serializable {
     
-    private static int staticIndex = 0;
+    private static int staticIndex;
     private String term;
     private int idf;
     private int index;

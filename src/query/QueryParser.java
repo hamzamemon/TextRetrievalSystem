@@ -24,16 +24,6 @@ public final class QueryParser {
             inputA = Preprocess.process(array[0]);
             operator = "OR";
         }
-        else if(array.length == 4){
-            inputA = Preprocess.process(array[0]);
-            operator = array[1].toUpperCase();
-            if(!"NEAR".equals(operator)){
-                return null;
-            }
-            inputB = Preprocess.process(array[2]);
-            int k = Integer.parseInt(array[3]);
-            return new BooleanQuery(inputA, operator, inputB, k);
-        }
         else {
             inputA = Preprocess.process(array[0]);
             operator = array[1].toUpperCase();

@@ -5,7 +5,6 @@ public class BooleanQuery {
     private String inputA;
     private String operator;
     private String inputB;
-    private int k;
     
     public BooleanQuery(String operator, String inputB) {
         inputA = null;
@@ -17,17 +16,6 @@ public class BooleanQuery {
         this.inputA = inputA;
         this.operator = operator;
         this.inputB = inputB;
-    }
-    
-    public BooleanQuery(String inputA, String operator, String inputB, int k) {
-        this.inputA = inputA;
-        this.operator = operator;
-        this.inputB = inputB;
-        this.k = k;
-    }
-    
-    public int getK() {
-        return k;
     }
     
     public String getInputA() {
