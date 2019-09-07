@@ -1,10 +1,18 @@
 package search;
 
-import index.*;
+import index.DocumentIndex;
+import index.Invert;
+import index.Posting;
+import index.PostingList;
+import index.PostingLists;
+import index.TermIndex;
 import query.BooleanQuery;
 import query.QueryParser;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -35,8 +43,8 @@ public class Driver {
         PostingLists postingLists = (PostingLists) ois3.readObject();
         
         long end = System.nanoTime();
-        long dif = end - start;
-        System.out.println("dif = " + dif / 1_000_000_000.0);
+        long diff = end - start;
+        System.out.println("diff = " + diff / 1_000_000_000.0);
         
         ois.close();
         ois2.close();
@@ -44,15 +52,15 @@ public class Driver {
         
         String queryTerms = getInput();
         
-        while(!"E*#T".equals(queryTerms)) {
+        while(!"EXIT".equals(queryTerms)) {
             start = System.nanoTime();
             
             BooleanQuery query = QueryParser.parse(queryTerms);
             PostingList postings = BooleanSearcher.search(query, termIndex, postingLists);
             
             end = System.nanoTime();
-            dif = end - start;
-            System.out.println("dif = " + dif / 1_000_000_000.0);
+            diff = end - start;
+            System.out.println("diff = " + diff / 1_000_000_000.0);
             
             if(postings == null) {
                 System.out.println('\'' + queryTerms + "' isn't in any of the files.\n");
@@ -70,7 +78,7 @@ public class Driver {
     private static String getInput() {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.print("Enter a term to search for (E*#T to quit): ");
+        System.out.print("Enter a term to search for (EXIT to quit): ");
         return scanner.nextLine();
     }
     
@@ -81,7 +89,7 @@ public class Driver {
      * @param postings   the list of Postings that is the final result of the query
      */
     private static void writeInfo(BooleanQuery query, String queryTerms, PostingList postings)
-            throws FileNotFoundException {
+            throws IOException {
         queryTerms = queryTerms.replace(" ", "_");
         boolean empty = query.getInputB().isEmpty();
         
@@ -92,12 +100,12 @@ public class Driver {
         
         List<List<Integer>> locations = BooleanSearcher.getLocations();
         
-        for(int i = 0; i < postings.size(); i++) {
+        for(int i = 0, length = postings.size(); i < length; i++) {
             Posting posting = postings.get(i);
             pw.println("---------------");
             
-            String name = posting.getName();
-            pw.println("Filename: " + name);
+            int number = posting.getNumber();
+            pw.println("Doc number: " + number);
             if(empty) {
                 pw.println("Term frequency: " + posting.getFrequency());
             }
@@ -105,7 +113,7 @@ public class Driver {
             StringBuilder sb = new StringBuilder();
             List<Integer> locs = locations.get(i);
             
-            for(int j = 0; j < locs.size() - 1; j++) {
+            for(int j = 0, length2 = locs.size() - 1; j < length2; j++) {
                 Integer integer = locs.get(j);
                 sb.append(integer).append(", ");
             }

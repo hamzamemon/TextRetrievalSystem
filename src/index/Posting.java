@@ -4,28 +4,25 @@ import java.io.Serializable;
 import java.util.Comparator;
 
 /**
- * This class creates a Posting, which is when a term appears in the file.
- * It contains the filename, the frequency of said term in the file, the weight and the first location of the
- * term in the file.
+ * This class creates a Posting, which is when a term appears in the file. It contains the filename, the frequency of
+ * said term in the file, the weight and the first location of the term in the file.
  */
 public class Posting implements Serializable {
     
-    public static final Comparator<Posting> COMPARATOR = Comparator.comparing(posting -> posting.name);
+    private static final long serialVersionUID = 3277327571128511637L;
+    public static final Comparator<Posting> COMPARATOR = Comparator.comparing(posting -> posting.number);
     
-    private String name;
+    private int number;
     private int frequency;
-    private int firstLocation;
     private double weight;
     
     /**
      * Instantiates a new Posting.
      *
-     * @param name          the filename
-     * @param firstLocation the first location of the term in the file
+     * @param number the document number
      */
-    public Posting(String name, int firstLocation) {
-        this.name = name;
-        this.firstLocation = firstLocation;
+    public Posting(int number) {
+        this.number = number;
         frequency = 1;
     }
     
@@ -48,17 +45,7 @@ public class Posting implements Serializable {
     }
     
     /**
-     * Gets the first location of the term in the file as an Integer.
-     *
-     * @return the first location
-     */
-    public int getFirstLocation() {
-        return firstLocation;
-    }
-    
-    /**
-     * Increments frequency is the particular word is found
-     * another time in the file
+     * Increments frequency is the particular word is found another time in the file
      */
     public void incrementFrequency() {
         frequency++;
@@ -69,8 +56,8 @@ public class Posting implements Serializable {
      *
      * @return the filename
      */
-    public String getName() {
-        return name;
+    public int getNumber() {
+        return number;
     }
     
     /**
@@ -89,5 +76,14 @@ public class Posting implements Serializable {
      */
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+    
+    @Override
+    public String toString() {
+        return "Posting{" +
+                "number=" + number +
+                ", frequency=" + frequency +
+                ", weight=" + weight +
+                '}';
     }
 }

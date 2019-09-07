@@ -26,8 +26,8 @@ public class Invert {
         DocumentIndex documentIndex = new DocumentIndex();
         TermIndex termIndex = new TermIndex(documentIndex, postingLists);
         
-        setDocLengths(termIndex, documentIndex, postingLists);
-        writeObjects(termIndex, documentIndex, postingLists);
+        // setDocLengths(termIndex, documentIndex, postingLists);
+        // writeObjects(termIndex, documentIndex, postingLists);
         
         long end = System.nanoTime();
         long diff = end - start;
@@ -55,7 +55,7 @@ public class Invert {
                 double weight = loggedTf * term.getLoggedIdf();
                 posting.setWeight(weight);
                 
-                Document document = documentIndex.get(posting.getName());
+                Document document = documentIndex.get(posting.getNumber());
                 document.addLength(weight * weight);
             }
         }

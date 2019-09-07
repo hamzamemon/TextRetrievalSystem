@@ -29,4 +29,13 @@ public class BooleanQuery {
     public String getInputB() {
         return inputB;
     }
+    
+    @Override
+    public String toString() {
+        return "BooleanQuery{" +
+                "inputA='" + inputA + '\'' +
+                ", operator='" + operator + '\'' +
+                ", inputB='" + inputB + '\'' +
+                '}';
+    }
 }

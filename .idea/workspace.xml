@@ -5,478 +5,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6895a476-c4cd-4d1c-b7bb-49e9dca76c9f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/index/Term.java" afterPath="$PROJECT_DIR$/src/index/Term.java" />
-      <change beforePath="$PROJECT_DIR$/src/process/stemmer/PorterStemmer.java" afterPath="$PROJECT_DIR$/src/process/stemmer/PorterStemmer.java" />
-      <change beforePath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step4Suffixes.java" afterPath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step4Suffixes.java" />
-      <change beforePath="$PROJECT_DIR$/src/query/BooleanQuery.java" afterPath="$PROJECT_DIR$/src/query/BooleanQuery.java" />
-      <change beforePath="$PROJECT_DIR$/src/query/QueryParser.java" afterPath="$PROJECT_DIR$/src/query/QueryParser.java" />
-      <change beforePath="$PROJECT_DIR$/src/search/BooleanSearcher.java" afterPath="$PROJECT_DIR$/src/search/BooleanSearcher.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/DocumentIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/DocumentIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/Invert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Invert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/Posting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Posting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/PostingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/PostingList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/ScoredDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/ScoredDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/Term.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Term.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/TermIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/TermIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/Preprocess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/Preprocess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/StopList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/StopList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/stemmer/PorterStemmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/PorterStemmer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step2Suffixes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step2Suffixes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step3Suffixes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step3Suffixes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step4Suffixes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step4Suffixes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/query/BooleanQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/query/BooleanQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/query/QueryParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/query/QueryParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/BooleanSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/BooleanSearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/ScoredDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/ScoredDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/VSMTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/VSMTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/PorterStemmerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PorterStemmerTest.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="PorterStemmer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/process/stemmer/PorterStemmer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QueryParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/query/QueryParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-              <folding>
-                <element signature="method#parse#0;class#QueryParser#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TermIndex.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index/TermIndex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#TermIndex#0;class#TermIndex#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/search/Driver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-              <folding>
-                <element signature="method#main#0;class#Driver#0" expanded="true" />
-                <element signature="method#writeInfo#0;class#Driver#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Document.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index/Document.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Term.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index/Term.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BooleanQuery.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/query/BooleanQuery.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StopList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/process/StopList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-              <folding>
-                <element signature="method#StopList#0;class#StopList#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostingList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index/PostingList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="method#updatePostings#0;class#PostingList#0" expanded="true" />
-                <element signature="method#intersect#0;class#PostingList#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BooleanSearcher.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/search/BooleanSearcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="65" column="25" lean-forward="false" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-              <folding>
-                <element signature="e#1727#1728#0" expanded="true" />
-                <element signature="e#1759#1760#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/TextRetrievalSystem$Invert.ic" NAME="Invert Coverage Results" MODIFIED="1550163060327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TextRetrievalSystem$PorterStemmerTest.ic" NAME="PorterStemmerTest Coverage Results" MODIFIED="1550163043562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myAutoScrollToSource" value="true" />
+    <option name="myElementSize" value="248" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>queee</find>
-      <find>getIndex</find>
-      <find>new Term(</find>
-      <find>setLength</find>
-      <find>addLength</find>
-      <find>new IDF</find>
-      <find>COMPARATOR</find>
-      <find>setLoggedTf</find>
-      <find>setLoggedIdf</find>
-      <find>getWeight</find>
-      <find>new ScoredDocument</find>
-      <find>fir</find>
-      <find>first loc</find>
-      <find>first loca</find>
-      <find>inver</find>
-      <find>Syste</find>
-      <find>system.o</find>
-      <find>matcher</find>
-      <find>getLet</find>
-      <find>implements Seri</find>
-      <find>implements Seria</find>
-      <find>writeObject(Objec</find>
-      <find>@author</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/res/data/FT942-15743.txt" />
-        <option value="$PROJECT_DIR$/src/process/Step2Suffixes.java" />
-        <option value="$PROJECT_DIR$/src/process/suffixes/Step2Suffixes.java" />
-        <option value="$PROJECT_DIR$/src/index/DocumentIndex.java" />
-        <option value="$PROJECT_DIR$/src/index/IDF.java" />
-        <option value="$PROJECT_DIR$/src/process/PorterStemmer.java" />
-        <option value="$PROJECT_DIR$/src/process/Driver.java" />
-        <option value="$PROJECT_DIR$/src/process/stemmer/suffixes/PorterStemmer.java" />
-        <option value="$PROJECT_DIR$/porter2Input.txt" />
-        <option value="$PROJECT_DIR$/src/test/PorterStemmerTest.java" />
-        <option value="$PROJECT_DIR$/src/process/WordMethods.java" />
-        <option value="$PROJECT_DIR$/src/index/Posting.java" />
-        <option value="$PROJECT_DIR$/src/index/Document.java" />
-        <option value="$PROJECT_DIR$/src/index/Invert.java" />
-        <option value="$PROJECT_DIR$/src/search/Driver.java" />
-        <option value="$PROJECT_DIR$/src/index/PostingList.java" />
-        <option value="$PROJECT_DIR$/src/index/PostingLists.java" />
-        <option value="$PROJECT_DIR$/src/index/ScoredDocument.java" />
-        <option value="$PROJECT_DIR$/src/index/Term.java" />
-        <option value="$PROJECT_DIR$/src/index/TermIndex.java" />
-        <option value="$PROJECT_DIR$/src/process/stemmer/suffixes/Step2Suffixes.java" />
-        <option value="$PROJECT_DIR$/src/process/stemmer/suffixes/Step3Suffixes.java" />
-        <option value="$PROJECT_DIR$/src/process/stemmer/suffixes/Step4Suffixes.java" />
-        <option value="$PROJECT_DIR$/src/process/stemmer/WordMethods.java" />
-        <option value="$PROJECT_DIR$/src/process/Preprocess.java" />
-        <option value="$PROJECT_DIR$/src/process/stemmer/PorterStemmer.java" />
-        <option value="$PROJECT_DIR$/src/query/BooleanQuery.java" />
-        <option value="$PROJECT_DIR$/src/query/QueryParser.java" />
-        <option value="$PROJECT_DIR$/src/search/BooleanSearcher.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="18" />
-    <option name="y" value="26" />
-    <option name="width" value="939" />
-    <option name="height" value="1036" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Abstraction issuesJava</id>
-          </State>
-          <State>
-            <id>Cloning issuesJava</id>
-          </State>
-          <State>
-            <id>Code style issuesJava</id>
-          </State>
-          <State>
-            <id>Control flow issuesJava</id>
-          </State>
-          <State>
-            <id>Encapsulation issuesJava</id>
-          </State>
-          <State>
-            <id>Inheritance issuesJava</id>
-          </State>
-          <State>
-            <id>Initialization issuesJava</id>
-          </State>
-          <State>
-            <id>Internationalization issuesJava</id>
-          </State>
-          <State>
-            <id>JUnit issuesJava</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Java 7Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>Kotlin</id>
-          </State>
-          <State>
-            <id>Logging issuesJava</id>
-          </State>
-          <State>
-            <id>Method metricsJava</id>
-          </State>
-          <State>
-            <id>Numeric issuesJava</id>
-          </State>
-          <State>
-            <id>Performance issuesJava</id>
-          </State>
-          <State>
-            <id>Portability issuesJava</id>
-          </State>
-          <State>
-            <id>Probable bugsJava</id>
-          </State>
-          <State>
-            <id>Probable bugsKotlin</id>
-          </State>
-          <State>
-            <id>Redundant constructsKotlin</id>
-          </State>
-          <State>
-            <id>Style issuesKotlin</id>
-          </State>
-          <State>
-            <id>Threading issuesJava</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>ObjectEqualsCanBeEquality</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
+  <component name="ProjectId" id="1QNZgdn2i57HeGpNYzyQUeee9Kt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource PackagesPane="true" ProjectPane="true" />
-      <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope">
-        <subPane subId="Production">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="TextRetrievalSystem" type="cbb8eebc:String" user="TextRetrievalSystem" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="TextRetrievalSystem" type="cbb8eebc:String" user="TextRetrievalSystem" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="TextRetrievalSystem" type="cbb8eebc:String" user="TextRetrievalSystem" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="index" type="cbb8eebc:String" user="index" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="TextRetrievalSystem" type="cbb8eebc:String" user="TextRetrievalSystem" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="TextRetrievalSystem" type="cbb8eebc:String" user="TextRetrievalSystem" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TextRetrievalSystem" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TextRetrievalSystem" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TextRetrievalSystem" type="616d4139:PackageViewModuleNode" />
-              <item name="index" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TextRetrievalSystem" type="616d4139:PackageViewModuleNode" />
-              <item name="process" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TextRetrievalSystem" type="616d4139:PackageViewModuleNode" />
-              <item name="process" type="1f31426a:PackageElementNode" />
-              <item name="stemmer" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TextRetrievalSystem" type="616d4139:PackageViewModuleNode" />
-              <item name="query" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TextRetrievalSystem" type="616d4139:PackageViewModuleNode" />
-              <item name="search" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TextRetrievalSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextRetrievalSystem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextRetrievalSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextRetrievalSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextRetrievalSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="process" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextRetrievalSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="process" type="462c0819:PsiDirectoryNode" />
-              <item name="stemmer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextRetrievalSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="process" type="462c0819:PsiDirectoryNode" />
-              <item name="stemmer" type="462c0819:PsiDirectoryNode" />
-              <item name="suffixes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextRetrievalSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TextRetrievalSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextRetrievalSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scratches">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-            <path>
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="com.intellij.database" type="61db50fb:ScratchProjectViewPane$MyPsiNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
-    <property name="last.edited.regexp" value="Sample Text" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="/opt/jprofiler/bin/jprofiler" />
+    <property name="last.edited.regexp" value="Sample Text" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="IntroduceConstantDialog.RECENTS_KEY">
+      <recent name="process.stemmer.PorterStemmer" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -491,142 +87,97 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Invert">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
-    <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="search.Driver" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="TextRetrievalSystem" />
-      <envs />
-    </configuration>
-    <configuration name="Invert" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="index.Invert" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="TextRetrievalSystem" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration name="PorterStemmerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TextRetrievalSystem" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.PorterStemmerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
+    <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="PorterStemmerTest.testPorter2Algorithm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TextRetrievalSystem" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.PorterStemmerTest" />
-      <option name="METHOD_NAME" value="testPorter2Algorithm" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Application.Invert" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Driver" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.PorterStemmerTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.PorterStemmerTest.testPorter2Algorithm" />
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="search.Driver" />
+      <module name="TextRetrievalSystem" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileWatcherTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="filewatcher.FileWatcherTest" />
+      <module name="TextRetrievalSystem" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Invert" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="index.Invert" />
+      <module name="TextRetrievalSystem" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VSMTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="search.VSMTester" />
+      <module name="TextRetrievalSystem" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PorterStemmerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TextRetrievalSystem" />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.PorterStemmerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.FileWatcherTest" />
+      <item itemvalue="Application.Invert" />
+      <item itemvalue="Application.VSMTester" />
+      <item itemvalue="Application.Driver" />
+      <item itemvalue="JUnit.PorterStemmerTest" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.Invert" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.PorterStemmerTest.testPorter2Algorithm" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.PorterStemmerTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Driver" />
+      <list>
+        <item itemvalue="Application.Invert" />
+        <item itemvalue="JUnit.PorterStemmerTest" />
+        <item itemvalue="Application.Driver" />
+        <item itemvalue="Application.FileWatcherTest" />
+        <item itemvalue="Application.VSMTester" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -648,567 +199,46 @@
       <workItem from="1516514311426" duration="797000" />
       <workItem from="1516515151856" duration="115000" />
       <workItem from="1516515341732" duration="2543000" />
-      <workItem from="1516588275460" duration="2848000" />
+      <workItem from="1516588275460" duration="3535000" />
+      <workItem from="1516853133325" duration="1265000" />
+      <workItem from="1517023024091" duration="2777000" />
+      <workItem from="1517630484512" duration="105000" />
+      <workItem from="1517710330285" duration="96000" />
+      <workItem from="1517716323062" duration="611000" />
+      <workItem from="1518041779252" duration="1420000" />
+      <workItem from="1518933365837" duration="639000" />
+      <workItem from="1520016642387" duration="1117000" />
+      <workItem from="1520032858201" duration="1928000" />
+      <workItem from="1520648131125" duration="602000" />
+      <workItem from="1543273619834" duration="2514000" />
+      <workItem from="1544255738050" duration="46000" />
+      <workItem from="1544312418725" duration="1364000" />
+      <workItem from="1550119129513" duration="65000" />
+      <workItem from="1557071706684" duration="68000" />
+      <workItem from="1557073136966" duration="87000" />
+      <workItem from="1558781590758" duration="3537000" />
+      <workItem from="1558817361659" duration="1077000" />
+      <workItem from="1558820372080" duration="24000" />
+      <workItem from="1558833641494" duration="15084000" />
+      <workItem from="1559006241605" duration="447000" />
+      <workItem from="1567613133322" duration="36000" />
+      <workItem from="1567613180687" duration="1169000" />
+      <workItem from="1567844279366" duration="7761000" />
+      <workItem from="1567882401400" duration="6254000" />
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="PorterStemmerTest_testPorter2Algorithm - 2018.01.12 at 23h 02m 34s.xml">
-      <configuration name="PorterStemmerTest.testPorter2Algorithm" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PorterStemmerTest_testPorter2Algorithm - 2018.01.12 at 23h 03m 17s.xml">
-      <configuration name="PorterStemmerTest.testPorter2Algorithm" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PorterStemmerTest_testPorter2Algorithm - 2018.01.12 at 23h 03m 23s.xml">
-      <configuration name="PorterStemmerTest.testPorter2Algorithm" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PorterStemmerTest_testPorter2Algorithm - 2018.01.12 at 23h 03m 39s.xml">
-      <configuration name="PorterStemmerTest.testPorter2Algorithm" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PorterStemmerTest_testPorter2Algorithm - 2018.01.12 at 23h 04m 40s.xml">
-      <configuration name="PorterStemmerTest.testPorter2Algorithm" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PorterStemmerTest_testPorter2Algorithm - 2018.01.12 at 23h 05m 32s.xml">
-      <configuration name="PorterStemmerTest.testPorter2Algorithm" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PorterStemmerTest_testPorter2Algorithm - 2018.01.12 at 23h 05m 37s.xml">
-      <configuration name="PorterStemmerTest.testPorter2Algorithm" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PorterStemmerTest_testPorter2Algorithm - 2018.01.12 at 23h 05m 48s.xml">
-      <configuration name="PorterStemmerTest.testPorter2Algorithm" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PorterStemmerTest_testPorter2Algorithm - 2018.01.12 at 23h 05m 52s.xml">
-      <configuration name="PorterStemmerTest.testPorter2Algorithm" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PorterStemmerTest_testPorter2Algorithm - 2018.01.12 at 23h 06m 22s.xml">
-      <configuration name="PorterStemmerTest.testPorter2Algorithm" configurationId="JUnit" />
-    </history-entry>
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25977000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="18" y="26" width="1884" height="1036" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32725322" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819384" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2607296" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17819148" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31732777" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="62" />
-    </breakpoint-manager>
-    <watches-manager />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/search/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="111" column="41" lean-forward="false" selection-start-line="111" selection-start-column="34" selection-end-line="111" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/TermIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding>
-            <element signature="method#getSize#0;class#TermIndex#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/Invert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/TermIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1029">
-          <caret line="56" column="48" lean-forward="false" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
-          <folding>
-            <element signature="method#getSize#0;class#TermIndex#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/Preprocess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="98" column="22" lean-forward="false" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
-          <folding>
-            <element signature="method#process#0;class#Preprocess#0" expanded="false" />
-            <element signature="method#removePunctuationAndLowerCase#0;class#Preprocess#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/Invert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/data/FT942-15743.txt" />
-    <entry file="file://$PROJECT_DIR$/src/index/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="970">
-          <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/data/FT911-4016.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/query/QueryParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/search/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="111" column="41" lean-forward="false" selection-start-line="111" selection-start-column="34" selection-end-line="111" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/Invert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="63" column="69" lean-forward="false" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/TermIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding>
-            <element signature="method#getSize#0;class#TermIndex#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/Preprocess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding>
-            <element signature="method#process#0;class#Preprocess#0" expanded="false" />
-            <element signature="method#removePunctuationAndLowerCase#0;class#Preprocess#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/suffixes/Step2Suffixes.java" />
-    <entry file="file://$PROJECT_DIR$/src/process/stemmer/suffixes/PorterStemmer.java" />
-    <entry file="file://$PROJECT_DIR$/src/index/Invert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/TermIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1029">
-          <caret line="56" column="48" lean-forward="false" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
-          <folding>
-            <element signature="method#getSize#0;class#TermIndex#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/Preprocess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="98" column="22" lean-forward="false" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
-          <folding>
-            <element signature="method#process#0;class#Preprocess#0" expanded="false" />
-            <element signature="method#removePunctuationAndLowerCase#0;class#Preprocess#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/Invert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/data/FT942-15743.txt" />
-    <entry file="file://$PROJECT_DIR$/res/data/FT911-4016.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/suffixes/Step2Suffixes.java" />
-    <entry file="file://$PROJECT_DIR$/src/index/IDF.java" />
-    <entry file="file://$PROJECT_DIR$/porter2Input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="29416" column="32" lean-forward="false" selection-start-line="29416" selection-start-column="32" selection-end-line="29416" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/stemmer/suffixes/PorterStemmer.java" />
-    <entry file="file://$PROJECT_DIR$/src/process/stemmer/WordMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-524">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding>
-            <element signature="method#WordMethods#0;class#WordMethods#0" expanded="false" />
-            <element signature="method#getLetterType#0;class#WordMethods#0" expanded="false" />
-            <element signature="e#590#591#0" expanded="false" />
-            <element signature="e#641#642#0" expanded="false" />
-            <element signature="method#endsWithDouble#0;class#WordMethods#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/PorterStemmerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <element signature="method#testPorter2Algorithm#0;class#PorterStemmerTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/search/ScoredDocument.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/Posting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/PostingLists.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/DocumentIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/Invert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="54" column="47" lean-forward="false" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
-          <folding>
-            <element signature="method#writeObject#0;class#Invert#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/stemmer/suffixes/Step4Suffixes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/stemmer/suffixes/Step3Suffixes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/stemmer/suffixes/Step2Suffixes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/search/VSMTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="method#main#0;class#VSMTester#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/Preprocess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding>
-            <element signature="method#process#0;class#Preprocess#0" expanded="false" />
-            <element signature="method#removePunctuationAndLowerCase#0;class#Preprocess#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/stemmer/WordMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-          <folding>
-            <element signature="method#WordMethods#0;class#WordMethods#0" expanded="false" />
-            <element signature="method#getLetterType#0;class#WordMethods#0" expanded="false" />
-            <element signature="e#590#591#0" expanded="false" />
-            <element signature="e#641#642#0" expanded="false" />
-            <element signature="method#endsWithDouble#0;class#WordMethods#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/ScoredDocument.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/Term.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/query/BooleanQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/StopList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding>
-            <element signature="method#StopList#0;class#StopList#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/PostingList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="method#updatePostings#0;class#PostingList#0" expanded="true" />
-            <element signature="method#intersect#0;class#PostingList#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/TermIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#TermIndex#0;class#TermIndex#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/stemmer/PorterStemmer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="39" column="52" lean-forward="true" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/query/QueryParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="method#parse#0;class#QueryParser#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/search/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <element signature="method#main#0;class#Driver#0" expanded="true" />
-            <element signature="method#writeInfo#0;class#Driver#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/search/BooleanSearcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="65" column="25" lean-forward="false" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-          <folding>
-            <element signature="e#1727#1728#0" expanded="true" />
-            <element signature="e#1759#1760#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>TextRetrievalSystem</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -11,25 +11,25 @@ public class ScoredDocument {
     public static final Comparator<ScoredDocument> COMPARATOR = (t, t1) -> Double.compare(t1.score, t.score);
     private static final DecimalFormat FORMATTER = new DecimalFormat("#.###");
 
-    private String name;
+    private int number;
     private double score;
 
     /**
      * Creates a ScoredDocument taking in the file name
      *
-     * @param name the filename
+     * @param number the document number
      */
-    public ScoredDocument(String name){
-        this.name = name;
+    public ScoredDocument(int number){
+        this.number = number;
     }
 
     /**
-     * Gets the filename
+     * Gets the document number
      *
-     * @return filename
+     * @return document number
      */
-    public String getName(){
-        return name;
+    public int getNumber(){
+        return number;
     }
 
     /**
@@ -48,5 +48,13 @@ public class ScoredDocument {
      */
     public void setScore(double score){
         this.score = Double.parseDouble(FORMATTER.format(score));
+    }
+    
+    @Override
+    public String toString() {
+        return "ScoredDocument{" +
+                "number=" + number +
+                ", score=" + score +
+                '}';
     }
 }

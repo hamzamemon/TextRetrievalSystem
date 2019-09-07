@@ -8,18 +8,19 @@ import java.io.Serializable;
  */
 public class Document implements Serializable {
     
-    private String name;
+    private static final long serialVersionUID = -2554333512339589168L;
+    private int number;
     private int numberOfWords;
     private double length;
     
     /**
      * Instantiates a new Document.
      *
-     * @param name          the filename
+     * @param number        the document number
      * @param numberOfWords the number of words after processing
      */
-    public Document(String name, int numberOfWords) {
-        this.name = name;
+    public Document(int number, int numberOfWords) {
+        this.number = number;
         this.numberOfWords = numberOfWords;
     }
     
@@ -51,12 +52,12 @@ public class Document implements Serializable {
     }
     
     /**
-     * Gets the document's name
+     * Gets the document number
      *
-     * @return the name
+     * @return the document number
      */
-    public String getName() {
-        return name;
+    public int getNumber() {
+        return number;
     }
     
     /**

@@ -2,6 +2,8 @@ package query;
 
 import process.Preprocess;
 
+import java.util.Locale;
+
 public final class QueryParser {
     
     public static BooleanQuery parse(String queryTerms) {
@@ -12,7 +14,7 @@ public final class QueryParser {
         String[] array = queryTerms.split(" ");
         
         if(array.length == 2) {
-            operator = array[0].toUpperCase();
+            operator = array[0].toUpperCase(Locale.ENGLISH);
             if(!"NOT".equals(operator)) {
                 return null;
             }
@@ -26,7 +28,7 @@ public final class QueryParser {
         }
         else {
             inputA = Preprocess.process(array[0]);
-            operator = array[1].toUpperCase();
+            operator = array[1].toUpperCase(Locale.ENGLISH);
             inputB = Preprocess.process(array[2]);
         }
         return new BooleanQuery(inputA, operator, inputB);

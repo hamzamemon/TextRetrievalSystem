@@ -3,6 +3,7 @@ package process;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -11,22 +12,22 @@ import java.util.Scanner;
  * @author hamza
  */
 public class StopList extends HashSet<String> {
-    
+
     /**
      * Instantiates a new Stop list.
      */
-    public StopList() {
-        try(Scanner scanner = new Scanner(new File("src/process/stoplist.txt"))) {
-            while(scanner.hasNext()) {
+    public StopList(){
+        try(Scanner scanner = new Scanner(new File("src/process/stoplist.txt"))){
+            while(scanner.hasNext()){
                 String next = removeSingleQuotesAndLowerCase(scanner.next());
                 add(next);
             }
         }
-        catch(FileNotFoundException e) {
+        catch(FileNotFoundException e){
             System.out.println("stoplist.txt cannot be opened");
         }
     }
-    
+
     /**
      * This method removes single quotes from the stop words and makes them lower case
      *
@@ -34,7 +35,7 @@ public class StopList extends HashSet<String> {
      *
      * @return the contents lower case and with single quotes removed
      */
-    private String removeSingleQuotesAndLowerCase(String contents) {
-        return contents.replace("'", "").toLowerCase();
+    private static String removeSingleQuotesAndLowerCase(String contents){
+        return contents.replace("'", "").toLowerCase(Locale.ENGLISH);
     }
 }

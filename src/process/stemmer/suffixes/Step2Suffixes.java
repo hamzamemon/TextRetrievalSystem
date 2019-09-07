@@ -1,5 +1,7 @@
 package process.stemmer.suffixes;
 
+import java.util.Locale;
+
 public enum Step2Suffixes {
     
     // 7 letters
@@ -50,6 +52,6 @@ public enum Step2Suffixes {
     
     @Override
     public String toString() {
-        return name().toLowerCase();
+        return name().toLowerCase(Locale.ENGLISH);
     }
 }

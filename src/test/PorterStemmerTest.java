@@ -32,7 +32,7 @@ public class PorterStemmerTest {
         catch(FileNotFoundException e) {
             e.printStackTrace();
         }
-        
+
         assertEquals(count, 0);
     }
     

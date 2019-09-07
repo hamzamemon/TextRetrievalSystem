@@ -50,4 +50,12 @@ public class ScoredDocument {
     public void setScore(double score) {
         this.score = Double.parseDouble(FORMATTER.format(score));
     }
+    
+    @Override
+    public String toString() {
+        return "ScoredDocument{" +
+                "name='" + name + '\'' +
+                ", score=" + score +
+                '}';
+    }
 }

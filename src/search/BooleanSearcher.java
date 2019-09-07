@@ -1,6 +1,10 @@
 package search;
 
-import index.*;
+import index.Posting;
+import index.PostingList;
+import index.PostingLists;
+import index.Term;
+import index.TermIndex;
 import query.BooleanQuery;
 
 import java.io.File;
@@ -45,7 +49,7 @@ public final class BooleanSearcher {
             }
         }
         
-        else if("NOT".equals(operator)) {
+        else if("NOT".equals(operator) && ALL_FILES != null) {
             list = termIndex.containsKey(inputB) ? listB.subtract(ALL_FILES, locations) : ALL_FILES;
         }
         
@@ -56,14 +60,18 @@ public final class BooleanSearcher {
         return locations;
     }
     
-    public static PostingList getFilenames() {
+    private static PostingList getFilenames() {
         File dir = new File("res/data/");
         File[] files = dir.listFiles();
+        if(files == null) {
+            return null;
+        }
+        
         Arrays.sort(files);
         PostingList postings = new PostingList();
         
-        for(File file : files) {
-            postings.add(new Posting(file.getName(), -1));
+        for(int i = 0, filesLength = files.length; i < filesLength; i++) {
+            postings.add(new Posting(i));
         }
         
         return postings;

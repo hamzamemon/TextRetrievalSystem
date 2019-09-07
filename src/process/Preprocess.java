@@ -2,6 +2,7 @@ package process;
 
 import process.stemmer.PorterStemmer;
 
+import java.util.Locale;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -11,10 +12,10 @@ import java.util.regex.Pattern;
  * @author hamza
  */
 public final class Preprocess {
-    
-    private static final Pattern COMPILE = Pattern.compile("[^a-zA-Z']");
+
+    private static final Pattern COMPILE = Pattern.compile("[^a-z']");
     private static final Set<String> STOP_LIST = new StopList();
-    
+
     /**
      * Process string by calling each method in the right order
      *
@@ -22,17 +23,17 @@ public final class Preprocess {
      *
      * @return the term after processing
      */
-    public static String process(String term) {
-        if(STOP_LIST.contains(term)) {
+    public static String process(String term){
+        if(STOP_LIST.contains(term)){
             return "";
         }
-        
+
         term = removePunctuationAndLowerCase(term);
         term = removeStopWords(term);
         term = PorterStemmer.stem(term);
         return removeStopWords(term);
     }
-    
+
     /**
      * This method removes special characters and lower cases
      *
@@ -40,10 +41,10 @@ public final class Preprocess {
      *
      * @return the term with stuff removed and lower case
      */
-    private static String removePunctuationAndLowerCase(String term) {
-        return COMPILE.matcher(term).replaceAll("").toLowerCase();
+    private static String removePunctuationAndLowerCase(String term){
+        return COMPILE.matcher(term.toLowerCase(Locale.ENGLISH)).replaceAll("");
     }
-    
+
     /**
      * This method removes stop words that were generated from the HashSet
      *
@@ -51,7 +52,7 @@ public final class Preprocess {
      *
      * @return the term with stop words removed
      */
-    private static String removeStopWords(String term) {
+    private static String removeStopWords(String term){
         return STOP_LIST.contains(term) ? "" : term;
     }
 }

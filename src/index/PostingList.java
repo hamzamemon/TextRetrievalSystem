@@ -8,20 +8,21 @@ import java.util.List;
  */
 public class PostingList extends ArrayList<Posting> {
     
+    private static final long serialVersionUID = 6896647847538170915L;
+    
     /**
      * Update the ArrayList of Postings for each term in each file
      *
-     * @param name     the filename
-     * @param location the first location of the term in the file
+     * @param number     the document number
      */
-    public void updatePostings(String name, int location) {
+    public void updatePostings(int number) {
         Posting posting = get(size() - 1);
-        if(posting.getName().equals(name)) {
+        if(posting.getNumber() == number) {
             posting.incrementFrequency();
         }
         
         else {
-            add(new Posting(name, location));
+            add(new Posting(number));
         }
     }
     
@@ -39,10 +40,10 @@ public class PostingList extends ArrayList<Posting> {
             Posting prev = backup.get(i - 1);
             Posting next = backup.get(i);
             
-            if(prev.getName().equals(next.getName())) {
+            if(prev.getNumber() == next.getNumber()) {
                 List<Integer> ints = new ArrayList<>(2);
-                ints.add(prev.getFirstLocation());
-                ints.add(next.getFirstLocation());
+//                ints.add(prev.getFirstLocation());
+  //              ints.add(next.getFirstLocation());
                 locations.add(ints);
                 
                 postings.add(next);
@@ -64,7 +65,7 @@ public class PostingList extends ArrayList<Posting> {
         Posting prev = backup.get(0);
         
         List<Integer> ints = new ArrayList<>(1);
-        ints.add(prev.getFirstLocation());
+//        ints.add(prev.getFirstLocation());
         locations.add(ints);
         
         PostingList postings = new PostingList();
@@ -72,12 +73,12 @@ public class PostingList extends ArrayList<Posting> {
         
         for(int i = 1; i < backup.size(); i++) {
             Posting next = backup.get(i);
-            if(prev.getName().equals(next.getName())) {
-                locations.get(locations.size() - 1).add(next.getFirstLocation());
+            if(prev.getNumber() == next.getNumber()) {
+ //               locations.get(locations.size() - 1).add(next.getFirstLocation());
             }
             else {
                 ints = new ArrayList<>(1);
-                ints.add(next.getFirstLocation());
+   //             ints.add(next.getFirstLocation());
                 locations.add(ints);
                 postings.add(next);
             }
@@ -97,10 +98,10 @@ public class PostingList extends ArrayList<Posting> {
      */
     public PostingList subtract(PostingList backup, List<List<Integer>> locations) {
         for(int i = backup.size() - 1, j = size() - 1; i >= 0 && j >= 0; i--) {
-            String name1 = backup.get(i).getName();
-            String name2 = get(j).getName();
+            int number1 = backup.get(i).getNumber();
+            int number2 = get(j).getNumber();
             
-            if(name1.equals(name2)) {
+            if(number1 == number2) {
                 backup.remove(i);
                 j--;
             }

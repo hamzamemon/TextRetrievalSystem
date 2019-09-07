@@ -3,24 +3,20 @@ package index;
 import java.io.Serializable;
 
 /**
- * This class stores information about a word, such as the word itself, the number of documents that have said word
+ * This class stores information about a word, such as the number of documents that have said word
  * and the index to use to get PostingList from PostingLists class
  */
 public class Term implements Serializable {
     
     private static int staticIndex;
-    private String term;
     private int idf;
     private int index;
     private double loggedIdf;
     
     /**
      * Instantiates a new Term.
-     *
-     * @param term the term itself
      */
-    public Term(String term) {
-        this.term = term;
+    public Term() {
         idf = 1;
         index = staticIndex;
         staticIndex++;
@@ -58,5 +54,14 @@ public class Term implements Serializable {
      */
     public void incrementDocFrequency() {
         idf++;
+    }
+    
+    @Override
+    public String toString() {
+        return "Term{" +
+                "idf=" + idf +
+                ", index=" + index +
+                ", loggedIdf=" + loggedIdf +
+                '}';
     }
 }
