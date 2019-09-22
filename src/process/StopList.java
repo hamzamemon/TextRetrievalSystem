@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author hamza
  */
-public class StopList extends HashSet<String> {
+public final class StopList extends HashSet<String> {
 
     /**
      * Instantiates a new Stop list.

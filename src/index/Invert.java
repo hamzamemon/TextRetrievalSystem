@@ -26,8 +26,8 @@ public class Invert {
         DocumentIndex documentIndex = new DocumentIndex();
         TermIndex termIndex = new TermIndex(documentIndex, postingLists);
         
-        // setDocLengths(termIndex, documentIndex, postingLists);
-        // writeObjects(termIndex, documentIndex, postingLists);
+        setDocLengths(termIndex, documentIndex, postingLists);
+        writeObjects(termIndex, documentIndex, postingLists);
         
         long end = System.nanoTime();
         long diff = end - start;

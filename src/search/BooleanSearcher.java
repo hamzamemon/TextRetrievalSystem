@@ -1,21 +1,17 @@
 package search;
 
-import index.Posting;
-import index.PostingList;
-import index.PostingLists;
-import index.Term;
-import index.TermIndex;
+import index.*;
 import query.BooleanQuery;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public final class BooleanSearcher {
     
     private static final PostingList ALL_FILES = getFilenames();
-    private static List<List<Integer>> locations;
+    
+    private BooleanSearcher() {
+    }
     
     public static PostingList search(BooleanQuery query, TermIndex termIndex, PostingLists postingLists) {
         String inputA = query.getInputA();
@@ -25,10 +21,11 @@ public final class BooleanSearcher {
         String operator = query.getOperator();
         
         String inputB = query.getInputB();
-        Term termB = termIndex.get(inputB);
-        PostingList listB = postingLists.getList(termB);
-        
-        locations = new ArrayList<>(Math.abs(listB.size() - listA.size()));
+        PostingList listB = new PostingList();
+        if(!inputB.isEmpty()) {
+            Term termB = termIndex.get(inputB);
+            listB = postingLists.getList(termB);
+        }
         
         PostingList backup = new PostingList();
         backup.addAll(listA);
@@ -39,25 +36,21 @@ public final class BooleanSearcher {
         
         if("AND".equals(operator)) {
             if(!listA.isEmpty() && !listB.isEmpty()) {
-                list = listA.intersect(backup, locations);
+                list = listA.intersect(backup);
             }
         }
         
         else if("OR".equals(operator)) {
             if(!listA.isEmpty() || !listB.isEmpty()) {
-                list = listA.union(backup, locations);
+                list = listA.union(backup);
             }
         }
         
         else if("NOT".equals(operator) && ALL_FILES != null) {
-            list = termIndex.containsKey(inputB) ? listB.subtract(ALL_FILES, locations) : ALL_FILES;
+            list = termIndex.containsKey(inputB) ? listB.subtract(ALL_FILES) : ALL_FILES;
         }
         
         return list.isEmpty() ? null : list;
-    }
-    
-    public static List<List<Integer>> getLocations() {
-        return locations;
     }
     
     private static PostingList getFilenames() {

@@ -98,28 +98,15 @@ public class Driver {
         pw.println("There are a total of " + postings.size() + " documents that contain the word");
         pw.println("Here are the documents that contain '" + queryTerms + "'.\n");
         
-        List<List<Integer>> locations = BooleanSearcher.getLocations();
-        
         for(int i = 0, length = postings.size(); i < length; i++) {
             Posting posting = postings.get(i);
-            pw.println("---------------");
             
             int number = posting.getNumber();
             pw.println("Doc number: " + number);
             if(empty) {
                 pw.println("Term frequency: " + posting.getFrequency());
             }
-            
-            StringBuilder sb = new StringBuilder();
-            List<Integer> locs = locations.get(i);
-            
-            for(int j = 0, length2 = locs.size() - 1; j < length2; j++) {
-                Integer integer = locs.get(j);
-                sb.append(integer).append(", ");
-            }
-            sb.append(locs.get(locs.size() - 1));
-            
-            pw.println("First locations: " + sb);
+    
             pw.println("---------------\n");
         }
         
