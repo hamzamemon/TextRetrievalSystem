@@ -1,7 +1,8 @@
 package process.stemmer.suffixes;
 
-import java.util.Locale;
-
+/**
+ * Class to convert a suffix to Porter Stemmed suffix
+ */
 public enum Step3Suffixes {
     
     // 7 letters
@@ -28,12 +29,22 @@ public enum Step3Suffixes {
         this.suffix = suffix;
     }
     
+    /**
+     * Gets the suffix
+     *
+     * @return the suffix
+     */
     public String getSuffix() {
         return suffix;
     }
     
+    /**
+     * Output object as String
+     *
+     * @return the object as a String
+     */
     @Override
     public String toString() {
-        return name().toLowerCase(Locale.ENGLISH);
+        return name().toLowerCase();
     }
 }

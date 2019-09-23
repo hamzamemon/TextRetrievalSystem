@@ -10,10 +10,10 @@ import query.BooleanQuery;
 import query.QueryParser;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.PrintWriter;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -30,7 +30,7 @@ public class Driver {
      * @throws IOException            an I/O exception has occurred
      * @throws ClassNotFoundException a class could not found in the folder
      */
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String... args) throws IOException, ClassNotFoundException {
         long start = System.nanoTime();
         
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Invert.TERMS));
@@ -89,28 +89,25 @@ public class Driver {
      * @param postings   the list of Postings that is the final result of the query
      */
     private static void writeInfo(BooleanQuery query, String queryTerms, PostingList postings)
-            throws IOException {
+            throws FileNotFoundException {
         queryTerms = queryTerms.replace(" ", "_");
         boolean empty = query.getInputB().isEmpty();
         
-        PrintWriter pw = new PrintWriter(queryTerms + ".txt");
-        pw.println("The word that was entered was '" + queryTerms + "'.");
-        pw.println("There are a total of " + postings.size() + " documents that contain the word");
-        pw.println("Here are the documents that contain '" + queryTerms + "'.\n");
-        
-        for(int i = 0, length = postings.size(); i < length; i++) {
-            Posting posting = postings.get(i);
+        try(PrintWriter pw = new PrintWriter(queryTerms + ".txt")) {
+            pw.println("The word that was entered was '" + queryTerms + "'.");
+            pw.println("There are a total of " + postings.size() + " documents that contain the word");
+            pw.println("Here are the documents that contain '" + queryTerms + "'.\n");
             
-            int number = posting.getNumber();
-            pw.println("Doc number: " + number);
-            if(empty) {
-                pw.println("Term frequency: " + posting.getFrequency());
+            for(Posting posting : postings) {
+                int number = posting.getNumber();
+                pw.println("Doc number: " + number);
+                if(empty) {
+                    pw.println("Term frequency: " + posting.getFrequency());
+                }
+                
+                pw.println("---------------\n");
             }
-    
-            pw.println("---------------\n");
         }
-        
-        pw.close();
         
         System.out.println("Created " + queryTerms + ".txt");
     }

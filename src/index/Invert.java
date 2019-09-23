@@ -19,7 +19,7 @@ public class Invert {
      *
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(String... args) {
         long start = System.nanoTime();
         
         PostingLists postingLists = new PostingLists();
@@ -72,7 +72,8 @@ public class Invert {
      * @param documentIndex the HashMap of the index for the documents
      * @param postingLists  the ArrayList of ArrayList of Postings
      */
-    private static void writeObjects(TermIndex termIndex, DocumentIndex documentIndex,
+    private static void writeObjects(TermIndex termIndex,
+                                     DocumentIndex documentIndex,
                                      PostingLists postingLists) {
         writeObject(termIndex, TERMS);
         writeObject(documentIndex, DOCS);

@@ -51,6 +51,11 @@ public class ScoredDocument {
         this.score = Double.parseDouble(FORMATTER.format(score));
     }
     
+    /**
+     * Output object as String
+     *
+     * @return the object as a String
+     */
     @Override
     public String toString() {
         return "ScoredDocument{" +

@@ -7,6 +7,8 @@ import java.util.ArrayList;
  */
 public class PostingLists extends ArrayList<PostingList> {
     
+    private static final long serialVersionUID = -5361405310464617287L;
+    
     /**
      * Uses index stored to Term class to get the PostingList from this class
      *

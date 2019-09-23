@@ -21,8 +21,6 @@ import java.util.Scanner;
 /**
  * This class reads in the indices that were created in the "Invert" class and allows the user to search for terms with
  * Booleans within them
- *
- * @author hamza
  */
 public class VSMTester {
     
@@ -34,7 +32,7 @@ public class VSMTester {
      * @throws IOException            an I/O exception has occurred
      * @throws ClassNotFoundException a class could not found in the folder
      */
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String... args) throws IOException, ClassNotFoundException {
         long start = System.nanoTime();
         
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Invert.TERMS));

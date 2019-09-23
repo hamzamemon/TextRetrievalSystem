@@ -6,13 +6,29 @@
   <component name="ChangeListManager">
     <list default="true" id="6895a476-c4cd-4d1c-b7bb-49e9dca76c9f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/DocumentIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/DocumentIndex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index/Invert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Invert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/Posting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Posting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index/PostingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/PostingList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/PostingLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/PostingLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/ScoredDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/ScoredDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/Term.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Term.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index/TermIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/TermIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/Preprocess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/Preprocess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/process/StopList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/StopList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/stemmer/PorterStemmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/PorterStemmer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/stemmer/WordMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/WordMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step2Suffixes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step2Suffixes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step3Suffixes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step3Suffixes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step4Suffixes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step4Suffixes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/query/BooleanQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/query/BooleanQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/query/QueryParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/query/QueryParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/search/BooleanSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/BooleanSearcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/search/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/ScoredDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/ScoredDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/VSMTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/VSMTester.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +67,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="IntroduceConstantDialog.RECENTS_KEY">
@@ -70,7 +86,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Driver">
+  <component name="RunManager" selected="Application.Invert">
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
@@ -153,8 +169,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Driver" />
         <item itemvalue="Application.Invert" />
+        <item itemvalue="Application.Driver" />
         <item itemvalue="JUnit.PorterStemmerTest" />
         <item itemvalue="Application.FileWatcherTest" />
         <item itemvalue="Application.VSMTester" />
@@ -211,7 +227,7 @@
       <workItem from="1567844279366" duration="7761000" />
       <workItem from="1567882401400" duration="6254000" />
       <workItem from="1569138028120" duration="1716000" />
-      <workItem from="1569143741860" duration="480000" />
+      <workItem from="1569143741860" duration="16847000" />
     </task>
     <servers />
   </component>
@@ -240,6 +256,11 @@
           <url>file://$PROJECT_DIR$/src/search/Driver.java</url>
           <line>93</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/index/TermIndex.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

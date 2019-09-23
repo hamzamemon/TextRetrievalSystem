@@ -1,18 +1,31 @@
 package search;
 
-import index.*;
+import index.Posting;
+import index.PostingList;
+import index.PostingLists;
+import index.Term;
+import index.TermIndex;
 import query.BooleanQuery;
 
 import java.io.File;
 import java.util.Arrays;
 
+/**
+ * This class is do the calculation for AND, OR and NOT
+ */
 public final class BooleanSearcher {
     
     private static final PostingList ALL_FILES = getFilenames();
     
-    private BooleanSearcher() {
-    }
-    
+    /**
+     * This method does the actual searching with the terms and the Postings
+     *
+     * @param query        object to hold the query
+     * @param termIndex    Term and its postings
+     * @param postingLists Postings of throughout the Documents
+     *
+     * @return the result of the query
+     */
     public static PostingList search(BooleanQuery query, TermIndex termIndex, PostingLists postingLists) {
         String inputA = query.getInputA();
         Term termA = termIndex.get(inputA);
@@ -53,6 +66,11 @@ public final class BooleanSearcher {
         return list.isEmpty() ? null : list;
     }
     
+    /**
+     * Converts input files to Postings
+     *
+     * @return input files
+     */
     private static PostingList getFilenames() {
         File dir = new File("res/data/");
         File[] files = dir.listFiles();

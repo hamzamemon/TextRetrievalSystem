@@ -12,6 +12,9 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * This class does the Porter Stemmer algorithm (http://snowball.tartarus.org/algorithms/english/stemmer.html)
+ */
 public final class PorterStemmer {
     
     private static final Step2Suffixes[] STEP_2_SUFFIXES = Step2Suffixes.values();
@@ -24,9 +27,9 @@ public final class PorterStemmer {
     private static Map<String, String> exceptionalForms = new HashMap<>(19);
     private static Map<String, String> stringToLetterTypes = new HashMap<>();
     
-    private PorterStemmer() {
-    }
-    
+    /**
+     * Exceptions to the algorithm
+     */
     public static void createMap() {
         String[] keys = {"skis", "skies", "dying", "lying", "tying", "idly", "gently", "ugly", "early", "only",
                 "singly", "sky", "news", "howe", "atlas", "cosmos", "bias", "andes", "communing"};
@@ -41,6 +44,13 @@ public final class PorterStemmer {
         EXCEPTIONAL_FORMS_AFTER_STEP_1A.addAll(Arrays.asList(EXCEPTIONAL_FORMS_AFTER_STEP_1A_ARRAY));
     }
     
+    /**
+     * R1 is the substring after the first consonant following a vowel
+     *
+     * @param term the word
+     *
+     * @return the index
+     */
     private static int getStartIndexOfR1(StringBuilder term) {
         String termS = term.toString();
         
@@ -54,10 +64,25 @@ public final class PorterStemmer {
         return getIndexOfVowelAfterConsonant(term, 0);
     }
     
+    /**
+     * R2 is the substring after the first consonant following a vowel in R1
+     *
+     * @param term the word
+     *
+     * @return the index
+     */
     private static int getStartIndexOfR2(StringBuilder term, int r1) {
         return getIndexOfVowelAfterConsonant(term, r1);
     }
     
+    /**
+     * Gets index of vowel after consonant
+     *
+     * @param term  the term
+     * @param start the starting position (i)
+     *
+     * @return the index
+     */
     private static int getIndexOfVowelAfterConsonant(StringBuilder term, int start) {
         String termS = term.toString();
         int i = start;
@@ -72,6 +97,13 @@ public final class PorterStemmer {
         return i;
     }
     
+    /**
+     * Performs the algorithm steps
+     *
+     * @param termS the word
+     *
+     * @return the stemmed word
+     */
     private static String makeStem(String termS) {
         if(termS.charAt(0) == '\'') {
             termS = termS.substring(1);
@@ -98,6 +130,7 @@ public final class PorterStemmer {
         }
         
         doStep1bc(term, r1);
+        doStep1c(term);
         doStep2To4(term, r1, r2);
         doStep5(term, r1, r2);
         
@@ -105,6 +138,13 @@ public final class PorterStemmer {
         return termToString.replace("Y", "y");
     }
     
+    /**
+     * Does the stemming helper method, determines if the word has been stemmed before
+     *
+     * @param termS the word
+     *
+     * @return the stemmed word
+     */
     public static String stem(String termS) {
         if(termS.length() <= 2) {
             return termS;
@@ -123,6 +163,11 @@ public final class PorterStemmer {
         return stem;
     }
     
+    /**
+     * Handles suffixes of "'", "'s" and "'s'"
+     *
+     * @param term the word
+     */
     private static void doStep0(StringBuilder term) {
         String termS = term.toString();
         
@@ -137,6 +182,11 @@ public final class PorterStemmer {
         }
     }
     
+    /**
+     * Handles "s" suffixes
+     *
+     * @param term the word
+     */
     private static void doStep1a(StringBuilder term) {
         String termS = term.toString();
         
@@ -164,6 +214,12 @@ public final class PorterStemmer {
         }
     }
     
+    /**
+     * Handles suffixes of "ed" and "ing"
+     *
+     * @param term the word
+     * @param r1   the R1 region
+     */
     private static void doStep1bc(StringBuilder term, int r1) {
         String termS = term.toString();
         int length = term.length();
@@ -198,6 +254,11 @@ public final class PorterStemmer {
         }
     }
     
+    /**
+     * Handles second part of Step 1b
+     *
+     * @param term the word
+     */
     private static void step1BPart2(StringBuilder term) {
         String termS = term.toString();
         
@@ -212,6 +273,26 @@ public final class PorterStemmer {
         }
     }
     
+    /**
+     * Replaces "y" with "i" if necessary
+     *
+     * @param term the word
+     */
+    private static void doStep1c(StringBuilder term) {
+        if(term.charAt(term.length() - 1) == 'y' || term.charAt(term.length() - 1) == 'Y') {
+            if(term.length() >= 3 && "aeiouy".indexOf(term.charAt(term.length() - 2)) < 0) {
+                term.replace(term.length() - 1, term.length(), "i");
+            }
+        }
+    }
+    
+    /**
+     * Replaces suffixes with stemmed suffix using enums
+     *
+     * @param term the word
+     * @param r1   the R1 region
+     * @param r2   the R2 region
+     */
     private static void doStep2To4(StringBuilder term, int r1, int r2) {
         // Step 2
         String termS = term.toString();
@@ -284,6 +365,28 @@ public final class PorterStemmer {
         }
     }
     
+    /**
+     * Remove suffix for Steps 2-4
+     *
+     * @param term        the word
+     * @param suffix      the suffix to remove
+     * @param replacement what to replace the suffix with
+     */
+    private static void removeSuffix(StringBuilder term, String suffix, String replacement) {
+        String prefix = term.substring(0, term.length() - suffix.length());
+        if(getMeasure(prefix) > 0) {
+            int lastIndex = prefix.length();
+            term.replace(lastIndex, term.length(), replacement);
+        }
+    }
+    
+    /**
+     * Remove ending "e" and "l" if necessary
+     *
+     * @param term the word
+     * @param r1   the R1 region
+     * @param r2   the R2 region
+     */
     private static void doStep5(StringBuilder term, int r1, int r2) {
         String termS = term.toString();
         
@@ -304,10 +407,27 @@ public final class PorterStemmer {
         }
     }
     
+    /**
+     * Determines if a word is "short" - ends with short syllable and R1 is null
+     *
+     * @param termS the word
+     *
+     * @return if word is short or not
+     */
     private static boolean isShort(String termS) {
         return endsWithShortSyllable(termS) && getMeasure(termS) == 1;
     }
     
+    /**
+     * Determines if word is a short syllable:
+     * Vowel followed by consonant (not "w", "x" or "Y" and preceded by consonant
+     * OR
+     * Vowel at the beginning of the word followed by consonant
+     *
+     * @param termS the word
+     *
+     * @return if word is a short syllable
+     */
     private static boolean endsWithShortSyllable(String termS) {
         if(termS.length() < 2) {
             return false;
@@ -326,14 +446,13 @@ public final class PorterStemmer {
         return !WordMethods.isVowel(thirdLast) && WordMethods.isVowel(secondLast) && !WordMethods.isVowel(last);
     }
     
-    private static void removeSuffix(StringBuilder term, String suffix, String replacement) {
-        String prefix = term.substring(0, term.length() - suffix.length());
-        if(getMeasure(prefix) > 0) {
-            int lastIndex = prefix.length();
-            term.replace(lastIndex, term.length(), replacement);
-        }
-    }
-    
+    /**
+     * Convert word to Vs and Cs (vowel and consonant)
+     *
+     * @param word the word
+     *
+     * @return the converted word
+     */
     private static String getLetterTypes(String word) {
         if(stringToLetterTypes.containsKey(word)) {
             return stringToLetterTypes.get(word);
@@ -353,6 +472,13 @@ public final class PorterStemmer {
         return letterTypesS;
     }
     
+    /**
+     * Number of CV pairs
+     *
+     * @param word the word
+     *
+     * @return number of pairs
+     */
     private static int getMeasure(String word) {
         String letterTypes = getLetterTypes(word);
         if(letterTypes.length() < 2) {

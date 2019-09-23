@@ -2,10 +2,18 @@ package query;
 
 import process.Preprocess;
 
-import java.util.Locale;
-
+/**
+ * Class to determine how to structure query object based on input
+ */
 public final class QueryParser {
     
+    /**
+     * Determine operator and object based on input
+     *
+     * @param queryTerms input (king AND queen
+     *
+     * @return the query object
+     */
     public static BooleanQuery parse(String queryTerms) {
         String inputA;
         String operator;
@@ -14,7 +22,7 @@ public final class QueryParser {
         String[] array = queryTerms.split(" ");
         
         if(array.length == 2) {
-            operator = array[0].toUpperCase(Locale.ENGLISH);
+            operator = array[0].toUpperCase();
             if(!"NOT".equals(operator)) {
                 return null;
             }
@@ -28,7 +36,7 @@ public final class QueryParser {
         }
         else {
             inputA = Preprocess.process(array[0]);
-            operator = array[1].toUpperCase(Locale.ENGLISH);
+            operator = array[1].toUpperCase();
             inputB = Preprocess.process(array[2]);
         }
         return new BooleanQuery(inputA, operator, inputB);

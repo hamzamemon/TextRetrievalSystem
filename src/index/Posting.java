@@ -9,9 +9,8 @@ import java.util.Comparator;
  */
 public class Posting implements Serializable {
     
-    private static final long serialVersionUID = 3277327571128511637L;
     public static final Comparator<Posting> COMPARATOR = Comparator.comparing(posting -> posting.number);
-    
+    private static final long serialVersionUID = 3277327571128511637L;
     private int number;
     private int frequency;
     private double weight;
@@ -78,6 +77,11 @@ public class Posting implements Serializable {
         this.weight = weight;
     }
     
+    /**
+     * Output object as String
+     *
+     * @return the object as a String
+     */
     @Override
     public String toString() {
         return "Posting{" +

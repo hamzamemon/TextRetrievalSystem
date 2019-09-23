@@ -3,8 +3,8 @@ package index;
 import java.io.Serializable;
 
 /**
- * This class creates a Document that acts as the text file. It contains the name of the file, the length and the number
- * of words in the file after processing it.
+ * This class creates a Document that acts as the text file. It contains the name of the file, the length and the
+ * number of words in the file after processing it.
  */
 public class Document implements Serializable {
     
@@ -61,11 +61,25 @@ public class Document implements Serializable {
     }
     
     /**
-     * Gets the number of words in the document after preprocessing
+     * Gets the number of words in the document after pre-processing
      *
      * @return the number of words
      */
     public int getNumberOfWords() {
         return numberOfWords;
+    }
+    
+    /**
+     * Output object as String
+     *
+     * @return the object as a String
+     */
+    @Override
+    public String toString() {
+        return "Document{" +
+                "number=" + number +
+                ", numberOfWords=" + numberOfWords +
+                ", length=" + length +
+                '}';
     }
 }

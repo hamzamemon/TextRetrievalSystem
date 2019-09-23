@@ -8,6 +8,7 @@ import java.io.Serializable;
  */
 public class Term implements Serializable {
     
+    private static final long serialVersionUID = -8026598333674490372L;
     private static int staticIndex;
     private int idf;
     private int index;
@@ -56,6 +57,11 @@ public class Term implements Serializable {
         idf++;
     }
     
+    /**
+     * Output object as String
+     *
+     * @return the object as a String
+     */
     @Override
     public String toString() {
         return "Term{" +

@@ -1,7 +1,6 @@
 package index;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This class is just an ArrayList of Postings that either performs AND, OR or NOT queries
@@ -29,7 +28,7 @@ public class PostingList extends ArrayList<Posting> {
     /**
      * Performs an AND query by looping through backup
      *
-     * @param backup    the collection of both PostingLists
+     * @param backup the collection of both PostingLists
      *
      * @return the posting list
      */
@@ -50,7 +49,7 @@ public class PostingList extends ArrayList<Posting> {
     /**
      * Performs an OR query by looping through backup
      *
-     * @param backup    the collection of both PostingLists
+     * @param backup the collection of both PostingLists
      *
      * @return the posting list
      */
@@ -74,7 +73,7 @@ public class PostingList extends ArrayList<Posting> {
     /**
      * Performs a NOT query by looping through backup and returning files not found
      *
-     * @param backup    the collection of both PostingLists (word's Postings and all)
+     * @param backup the collection of both PostingLists (word's Postings and all)
      *
      * @return the posting list
      */

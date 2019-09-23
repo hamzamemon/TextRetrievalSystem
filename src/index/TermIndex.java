@@ -38,9 +38,10 @@ public class TermIndex extends TreeMap<String, Term> {
             catch(FileNotFoundException e){
                 e.printStackTrace();
             }
-
-//            String name = file.getName();
-  //          name = name.substring(0, name.length() - 4);
+            
+            // uncomment to use file name instead of numbers
+            // String name = file.getName();
+            // name = name.substring(0, name.length() - 4);
             int size = getSize(i, contents, postingLists);
             documentIndex.addDocument(i, size);
         }
