@@ -5,30 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6895a476-c4cd-4d1c-b7bb-49e9dca76c9f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index/DocumentIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/DocumentIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index/Invert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Invert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index/Posting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Posting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index/PostingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/PostingList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index/PostingLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/PostingLists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index/ScoredDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/ScoredDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index/Term.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/Term.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index/TermIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/index/TermIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/Preprocess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/Preprocess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/StopList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/StopList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/stemmer/PorterStemmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/PorterStemmer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/stemmer/WordMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/WordMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step2Suffixes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step2Suffixes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step3Suffixes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step3Suffixes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step4Suffixes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/stemmer/suffixes/Step4Suffixes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/query/BooleanQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/query/BooleanQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/query/QueryParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/query/QueryParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/BooleanSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/BooleanSearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/ScoredDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/ScoredDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/VSMTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/VSMTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TextRetrievalSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TextRetrievalSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/PorterStemmerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PorterStemmerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,30 +29,41 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="package-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1QNZgdn2i57HeGpNYzyQUeee9Kt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last.edited.regexp" value="Sample Text" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="IntroduceConstantDialog.RECENTS_KEY">
       <recent name="process.stemmer.PorterStemmer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -227,7 +219,13 @@
       <workItem from="1567844279366" duration="7761000" />
       <workItem from="1567882401400" duration="6254000" />
       <workItem from="1569138028120" duration="1716000" />
-      <workItem from="1569143741860" duration="16847000" />
+      <workItem from="1569143741860" duration="17599000" />
+      <workItem from="1571528388753" duration="265000" />
+      <workItem from="1571528781069" duration="1243000" />
+      <workItem from="1571530059487" duration="486000" />
+      <workItem from="1572083931692" duration="116000" />
+      <workItem from="1572084685201" duration="247000" />
+      <workItem from="1572132805500" duration="975000" />
     </task>
     <servers />
   </component>
