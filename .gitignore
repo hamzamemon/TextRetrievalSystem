@@ -3,4 +3,4 @@ target/
 res/
 *.txt
 *.ser
-.idea/workspace.xml
+.idea/
