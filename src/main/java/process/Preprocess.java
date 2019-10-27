@@ -1,6 +1,6 @@
 package process;
 
-import process.stemmer.PorterStemmer;
+import com.github.xjavathehutt.porterstemmer.PorterStemmer;
 
 import java.util.Set;
 import java.util.regex.Pattern;

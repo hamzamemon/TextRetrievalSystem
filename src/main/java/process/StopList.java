@@ -16,7 +16,7 @@ public final class StopList extends HashSet<String> {
      * Instantiates a new Stop list.
      */
     public StopList() {
-        try(Scanner scanner = new Scanner(new File("src/process/stoplist.txt"))) {
+        try(Scanner scanner = new Scanner(new File("src/main/java/process/stoplist.txt"))) {
             while(scanner.hasNext()) {
                 String next = removeSingleQuotesAndLowerCase(scanner.next());
                 add(next);

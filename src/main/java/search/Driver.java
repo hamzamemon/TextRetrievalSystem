@@ -70,7 +70,6 @@ public class Driver {
                 writeInfo(query, queryTerms, postings);
             }
             
-            
             queryTerms = getInput();
         }
     }

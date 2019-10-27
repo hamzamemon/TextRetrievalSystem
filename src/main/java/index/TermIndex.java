@@ -7,8 +7,8 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 
+import com.github.xjavathehutt.porterstemmer.PorterStemmer;
 import process.Preprocess;
-import process.stemmer.PorterStemmer;
 
 /**
  * This class represents the HashMap of the index for the terms
