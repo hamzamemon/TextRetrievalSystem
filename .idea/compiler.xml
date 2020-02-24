@@ -9,8 +9,8 @@
         <module name="TextRetrievalSystem" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
-      <module name="TextRetrievalSystem" target="8" />
+    <bytecodeTargetLevel target="12">
+      <module name="TextRetrievalSystem" target="12" />
     </bytecodeTargetLevel>
   </component>
 </project>

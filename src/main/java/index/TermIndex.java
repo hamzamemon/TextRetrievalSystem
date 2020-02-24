@@ -1,14 +1,13 @@
 package index;
 
+import process.Preprocess;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
-
-import com.github.xjavathehutt.porterstemmer.PorterStemmer;
-import process.Preprocess;
 
 /**
  * This class represents the HashMap of the index for the terms
@@ -23,19 +22,18 @@ public class TermIndex extends TreeMap<String, Term> {
      * @param documentIndex the HashMap of the index for the Documents
      * @param postingLists  the PostingLists
      */
-    public TermIndex(DocumentIndex documentIndex, PostingLists postingLists){
+    public TermIndex(DocumentIndex documentIndex, PostingLists postingLists) {
         File dir = new File("res/data/");
         File[] files = dir.listFiles();
         Arrays.sort(files);
-        PorterStemmer.createMap();
-
-        for(int i = 0, length = files.length; i < length; i++){
+        
+        for(int i = 0, length = files.length; i < length; i++) {
             File file = files[i];
             String contents = null;
-            try(Scanner scanner = new Scanner(file).useDelimiter("\\Z")){
+            try(Scanner scanner = new Scanner(file).useDelimiter("\\Z")) {
                 contents = scanner.next();
             }
-            catch(FileNotFoundException e){
+            catch(FileNotFoundException e) {
                 e.printStackTrace();
             }
             
@@ -46,7 +44,7 @@ public class TermIndex extends TreeMap<String, Term> {
             documentIndex.addDocument(i, size);
         }
     }
-
+    
     /**
      * This method returns the number of words in the file that pass the 'Preprocessing' class. It loops through every
      * word in 'contents' and 'Preprocess'es each of them
@@ -57,36 +55,36 @@ public class TermIndex extends TreeMap<String, Term> {
      *
      * @return the number of words in the file after processing 'contents'
      */
-    private int getSize(int number, String contents, PostingLists postingLists){
+    private int getSize(int number, String contents, PostingLists postingLists) {
         int size = 0;
-
+        
         StringTokenizer tokenizer = new StringTokenizer(contents);
-        while(tokenizer.hasMoreTokens()){
+        while(tokenizer.hasMoreTokens()) {
             String word = tokenizer.nextToken();
             String processedWord = Preprocess.process(word);
-
-            if(!processedWord.isEmpty()){
+            
+            if(!processedWord.isEmpty()) {
                 size++;
-
+                
                 Term term = containsKey(processedWord) ? get(processedWord) : new Term();
                 PostingList postingList = postingLists.getList(term);
-
+                
                 // if first word in the file
-                if(postingList.isEmpty()){
+                if(postingList.isEmpty()) {
                     postingList.add(new Posting(number));
-
+                    
                     postingLists.add(postingList);
                     put(processedWord, term);
                 }
-
+                
                 // another occurrence of the word in the file
-                else{
+                else {
                     postingList.updatePostings(number);
                     term.incrementDocFrequency();
                 }
             }
         }
-
+        
         return size;
     }
 }
