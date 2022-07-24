@@ -1,13 +1,14 @@
-package search;
+package com.github.hamzamemon.search;
 
-import index.DocumentIndex;
-import index.Invert;
-import index.Posting;
-import index.PostingList;
-import index.PostingLists;
-import index.TermIndex;
-import query.BooleanQuery;
-import query.QueryParser;
+import com.github.hamzamemon.index.DocumentIndex;
+import com.github.hamzamemon.index.Invert;
+import com.github.hamzamemon.index.Posting;
+import com.github.hamzamemon.index.PostingList;
+import com.github.hamzamemon.index.PostingLists;
+import com.github.hamzamemon.index.TermIndex;
+import com.github.hamzamemon.query.BooleanQuery;
+import com.github.hamzamemon.query.QueryParser;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -26,11 +27,10 @@ public class Driver {
      * The entry point of application.
      *
      * @param args the input arguments
-     *
      * @throws IOException            an I/O exception has occurred
-     * @throws ClassNotFoundException a class could not found in the folder
+     * @throws ClassNotFoundException a class could not be found in the folder
      */
-    public static void main(String... args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         long start = System.nanoTime();
         
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Invert.TERMS));
@@ -52,7 +52,7 @@ public class Driver {
         
         String queryTerms = getInput();
         
-        while(!"EXIT".equals(queryTerms)) {
+        while (!StringUtils.equals(queryTerms, "EXIT")) {
             start = System.nanoTime();
             
             BooleanQuery query = QueryParser.parse(queryTerms);
@@ -62,10 +62,9 @@ public class Driver {
             diff = end - start;
             System.out.println("diff = " + diff / 1_000_000_000.0);
             
-            if(postings == null) {
+            if (postings == null) {
                 System.out.println('\'' + queryTerms + "' isn't in any of the files.\n");
             }
-            
             else {
                 writeInfo(query, queryTerms, postings);
             }
@@ -92,15 +91,15 @@ public class Driver {
         queryTerms = queryTerms.replace(" ", "_");
         boolean empty = query.getInputB().isEmpty();
         
-        try(PrintWriter pw = new PrintWriter(queryTerms + ".txt")) {
+        try (PrintWriter pw = new PrintWriter(queryTerms + ".txt")) {
             pw.println("The word that was entered was '" + queryTerms + "'.");
             pw.println("There are a total of " + postings.size() + " documents that contain the word");
             pw.println("Here are the documents that contain '" + queryTerms + "'.\n");
             
-            for(Posting posting : postings) {
-                int number = posting.getNumber();
-                pw.println("Doc number: " + number);
-                if(empty) {
+            for (Posting posting: postings) {
+                String filename = posting.getFilename();
+                pw.println("Doc filename: " + filename);
+                if (empty) {
                     pw.println("Term frequency: " + posting.getFrequency());
                 }
                 

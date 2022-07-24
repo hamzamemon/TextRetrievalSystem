@@ -1,14 +1,15 @@
-package search;
+package com.github.hamzamemon.search;
 
-import index.Document;
-import index.DocumentIndex;
-import index.Invert;
-import index.Posting;
-import index.PostingList;
-import index.PostingLists;
-import index.Term;
-import index.TermIndex;
-import process.Preprocess;
+import com.github.hamzamemon.index.Document;
+import com.github.hamzamemon.index.DocumentIndex;
+import com.github.hamzamemon.index.Invert;
+import com.github.hamzamemon.index.Posting;
+import com.github.hamzamemon.index.PostingList;
+import com.github.hamzamemon.index.PostingLists;
+import com.github.hamzamemon.index.Term;
+import com.github.hamzamemon.index.TermIndex;
+import com.github.hamzamemon.process.Preprocess;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Scanner;
 
 /**
@@ -28,11 +30,10 @@ public class VSMTester {
      * The entry point of application.
      *
      * @param args the input arguments
-     *
      * @throws IOException            an I/O exception has occurred
      * @throws ClassNotFoundException a class could not found in the folder
      */
-    public static void main(String... args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         long start = System.nanoTime();
         
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Invert.TERMS));
@@ -45,8 +46,8 @@ public class VSMTester {
         PostingLists postingLists = (PostingLists) ois3.readObject();
         
         long end = System.nanoTime();
-        long dif = end - start;
-        System.out.println("dif = " + dif / 1_000_000_000.0);
+        long diff = end - start;
+        System.out.println("dif = " + diff / 1_000_000_000.0);
         
         ois.close();
         ois2.close();
@@ -54,9 +55,9 @@ public class VSMTester {
         
         String queryTerms = getInput();
         
-        while(!"EXIT".equals(queryTerms)) {
+        while (!StringUtils.equals(queryTerms, "EXIT")) {
             String processedWord = Preprocess.process(queryTerms);
-            if(termIndex.containsKey(processedWord)) {
+            if (termIndex.containsKey(processedWord)) {
                 Term term = termIndex.get(processedWord);
                 PostingList postings = postingLists.getList(term);
                 
@@ -88,15 +89,15 @@ public class VSMTester {
      * @param queue         the ScoredDocuments ranked by score
      */
     private static void scoreDocs(PostingList postings, DocumentIndex documentIndex,
-                                  PriorityQueue<ScoredDocument> queue) {
-        for(Posting posting : postings) {
-            Document document = documentIndex.get(posting.getNumber());
-            ScoredDocument scoredDocument = new ScoredDocument(document.getNumber());
+                                  Queue<ScoredDocument> queue) {
+        for (Posting posting: postings) {
+            Document document = documentIndex.get(posting.getFilename());
+            ScoredDocument scoredDocument = new ScoredDocument(document.getFilename());
             
             double score = posting.getWeight() / document.getLength();
             scoredDocument.setScore(score);
             
-            if(score > 0) {
+            if (score > 0) {
                 queue.offer(scoredDocument);
             }
         }
@@ -109,11 +110,11 @@ public class VSMTester {
      * @param queue      the ScoredDocuments ranked by score
      */
     private static void writeInfo(String queryTerms, PriorityQueue<ScoredDocument> queue) throws FileNotFoundException {
-        try(PrintWriter pw = new PrintWriter(queryTerms + ".txt")) {
-            while(!queue.isEmpty()) {
+        try (PrintWriter pw = new PrintWriter(queryTerms + ".txt")) {
+            while (!queue.isEmpty()) {
                 ScoredDocument scoredDocument = queue.poll();
                 
-                pw.println(scoredDocument.getNumber() + ' ' + scoredDocument.getScore());
+                pw.println(scoredDocument.getFilename() + ' ' + scoredDocument.getScore());
             }
         }
         
